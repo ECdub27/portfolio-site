@@ -5,11 +5,10 @@ import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import propic from './propic.png';
-import uchihaSymbol from './uchihaSymbol 1.svg'
-import { CenterFocusStrong } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
 
-const Home = () =>(
+
+const Home = () => (
    <div className='Home'>
     <Container >
     <ContactMailIcon>
@@ -17,6 +16,8 @@ const Home = () =>(
         ewiegand51@gmail.com
       </Typography>
     </ContactMailIcon> 
+   
+
 </Container>
 <Box >
   <Typography variant="h2" component="h2" sx={{}}>
