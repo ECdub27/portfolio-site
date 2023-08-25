@@ -23,7 +23,9 @@ export default function BasicMenu() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
-          sx={{alignItems: 'center'}}
+          sx={{alignItems: 'center',
+        color: 'black',
+      }}
         >
           Dashboard
         </Button>
@@ -35,20 +37,22 @@ export default function BasicMenu() {
           onClose={handleClose}
           MenuListProps={{
             'aria-labelledby': 'basic-button',
+          
           }}
+          sx={{alignContent:'flex-end'}}
         >
           <Link to="https://github.com/ECdub27/portfolio-site/blob/master/src/Jr%20dev%20resume%20EC%20Wiegand.pdf" exact component={MenuItem}>
           
-          <MenuItem onClick={handleClose}>Resume</MenuItem>
+          <MenuItem onClick={handleClose} sx={{display:'inline-block' , backgroundColor:'primary'}}>Resume</MenuItem>
           </Link>
           <Link  to="https://github.com/ECdub27" exact component={MenuItem}>
-          <MenuItem onClick={handleClose}>Projects </MenuItem>
+          <MenuItem onClick={handleClose} sx={{display:'inline-block', backgroundColor:'primary'}}>Projects </MenuItem>
           </Link>
           <Link to="https://www.linkedin.com/in/elijah-christian-wiegand-2b59a898/" exact component={MenuItem}>
-          <MenuItem onClick={handleClose}>Contact</MenuItem>
+          <MenuItem onClick={handleClose} sx={{display:'inline-block' , backgroundColor:'primary'}}>Contact</MenuItem>
           </Link>
           <Link to="/" exact component={Home}>
-          <MenuItem onClick={handleClose}>Home</MenuItem>
+          <MenuItem onClick={handleClose} sx={{display:'inline-block' , backgroundColor:'primary'}}>Home</MenuItem>
           </Link>
         </Menu>
         
