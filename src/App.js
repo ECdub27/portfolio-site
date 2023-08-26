@@ -50,7 +50,7 @@ function App() {
     
     <Routes>
       
-      <Route path="/" exact element={<Home sx={{backgroundColor: '.palette.primary'}}/>}/>
+      <Route path="/" exact element={<Home sx={{backgroundColor: '.primary.main'}}/>}/>
       <Route path="/:id" />
       
       </Routes>

@@ -72,7 +72,10 @@ fontFamily:'League Spartan'}}>
     fontWeight:'medium',
     fontStyle:'Oblique',
     marginTop: 5,
-    fontFamily: 'Inter'
+    fontFamily: 'Inter',
+    marginLeft: 10,
+    marginRight: 10,
+    textAlign: 'center'
    }}>
       I am a Front- End Developer, from NY
       but I am based in San Diego, CA. 
