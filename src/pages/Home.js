@@ -14,50 +14,62 @@ const Home = () => (
    <div className='Home'>
        
     <Container  sx={{textAlign:'center',
-  backgroundColor:'#424242'}}>
-   <Typography sx={{padding: 1,
+  backgroundColor:'#212121',
+padding: 0,
+flexWrap:'wrap',
+flex:'auto',
+width: 100
+}}
+  >
+<Typography sx={{padding: 0,
       textTransform:'uppercase',
       fontweight: 'bold',
       fontFamily: 'League Spartan',
-      backgroundColor:'#424242'}}>
+      backgroundColor:'#212121',
+      margin:  0,
+      flex:'auto'
+      }}>
         ewiegand51@gmail.com
       </Typography>
       <Link to='mailto:ewiegand51@gmail.com' exact component={ContactMailIcon}>
-      <ContactMailIcon />
+      <ContactMailIcon sx={{backgroundColor: '#212121'}} />
       </Link>
    </Container>
 
-<Container>
-<Box sx={{ flex:'flex-end',
-padding: 10,
-backgroundColor:'#424242'
+<Container sx={{margin: 0, 
+justifyContent:'flex-start',
+flex:'auto', 
+width: 900,
+backgroundColor:'#212121',
 }}>
+<Box sx={{ backgroundColor:'#212121'}}>
   <Typography variant="h1" component="h2" sx={{textAlign:'center',
-fontFamily:'League Spartan', backgroundColor:'#424242'
-}}
->
+fontFamily:'League Spartan', width: 100,
+}}>
     Elijah-Christian "EC" Wiegand 
   </Typography>
-  
-</Box>
+  </Box>
 </Container>
-<Container sx={{backgroundColor: '#424242'}}>
+
+<Container sx={{backgroundColor: '#212121', flexWrap:'wrap',}}>
 <Avatar alt="Elijah-Christian"  src={propic} sx={{
   width: 400,
   height: 400,
-  marginTop: 3,
   left:400,
-  backgroundColor:'#424242'
+  backgroundColor:'#212121',
+  margin: 0,
+  marginLeft: 0,
+
 }}>
   
   </Avatar>
   </Container>
- <Box sx={{backgroundColor:'#424242'}}>
+ <Box sx={{backgroundColor:'#212121'}}>
    <Typography sx={{
     fontWeight:'medium',
-    fontColor:'#e040fb',
+    fontColor:'#212121',
     fontStyle:'Oblique',
-    marginTop: 5,
+    marginTop: 0,
     fontFamily: 'Inter',
     marginLeft: 10,
     marginRight: 10,

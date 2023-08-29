@@ -5,5 +5,9 @@
 .home{
     align-items: center;
     display: flex;
+    background-color: #212121;
     
+}
+.landing-page{
+    background-color: #212121;
 }

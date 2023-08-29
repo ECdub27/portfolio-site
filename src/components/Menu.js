@@ -4,6 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { Home } from '@mui/icons-material';
+import './menu.css';
 
 export default function BasicMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -16,7 +17,7 @@ export default function BasicMenu() {
     };
   
     return (
-      <div>
+      <div className='menu'>
         <Button
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
