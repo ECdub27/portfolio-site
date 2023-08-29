@@ -6,6 +6,8 @@ import BasicMenu from './components/Menu';
 import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+
+
 const theme = createTheme({
   palette:{
     primary:{
@@ -38,9 +40,10 @@ const UchihaIcon =  createSvgIcon(
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <div className="landing-page">
       <CssBaseline enableColorScheme />
-      <ThemeProvider theme={theme}>
+     
         
     <BrowserRouter>
     
@@ -50,14 +53,16 @@ function App() {
     
     <Routes>
       
-      <Route path="/" exact element={<Home sx={{backgroundColor: '.primary.main'}}/>}/>
+      <Route path="/" exact element={<Home sx={{color: 'primary'}}/>}/>
       <Route path="/:id" />
       
       </Routes>
       
       </BrowserRouter>
-      </ThemeProvider>
+      
+      
     </div>
+    </ThemeProvider>
   );
 }
 

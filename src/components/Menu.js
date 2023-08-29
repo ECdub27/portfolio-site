@@ -24,7 +24,7 @@ export default function BasicMenu() {
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
           sx={{alignItems: 'center',
-        color: 'black',
+        color: 'black', backgroundColor:'#424242'
       }}
         >
           Dashboard
