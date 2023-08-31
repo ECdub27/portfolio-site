@@ -8,7 +8,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import { useState, useEffect } from 'react';
-
+import DadJokeComponent from './components/dadJoke';
 const theme = createTheme({
   palette:{
     primary:{
@@ -87,7 +87,7 @@ useEffect(() => {
       
     </div>
     <footer className='footer'>
-      
+      <DadJokeComponent />
     </footer>
     </ThemeProvider>
   );

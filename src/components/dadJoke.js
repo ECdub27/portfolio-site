@@ -21,7 +21,7 @@ const DadJokeComponent = async () => {
 return (
     <div className='footer-div'>
         <footer className='footer'>
-      
+      <DadJokeComponent />
       </footer>
 
     </div>
