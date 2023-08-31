@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import propic from './propic.png';
-
+import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 
 
@@ -21,19 +21,20 @@ flex:'auto',
 width: 100
 }}
   >
-<Typography sx={{padding: 0,
+    <Grid container spacing={4}>
+      <Grid item xs={8}>
+<Typography color="#9575cd" sx={{
       textTransform:'uppercase',
       fontweight: 'bold',
       fontFamily: 'League Spartan',
-      backgroundColor:'#212121',
-      margin:  0,
-      flex:'auto'
       }}>
         ewiegand51@gmail.com
       </Typography>
       <Link to='mailto:ewiegand51@gmail.com' exact component={ContactMailIcon}>
-      <ContactMailIcon sx={{backgroundColor: '#212121'}} />
+      <ContactMailIcon  />
       </Link>
+      </Grid>
+      </Grid>
    </Container>
 
 <Container sx={{margin: 0, 
@@ -42,17 +43,22 @@ flex:'auto',
 width: 900,
 backgroundColor:'#212121',
 }}>
-<Box sx={{ backgroundColor:'#212121'}}>
-  <Typography variant="h1" component="h2" sx={{textAlign:'center',
-fontFamily:'League Spartan', width: 100,
-}}>
+<Box sx={{ backgroundColor:'#212121', }}>
+  <Grid container rowSpacing={12}>
+    <Grid item xs={8}>
+  <Typography variant="h1" component="h2" color="#9575cd" sx={{
+fontFamily:'League Spartan'}}>
     Elijah-Christian "EC" Wiegand 
   </Typography>
+  </Grid>
+  </Grid>
   </Box>
+  
 </Container>
 
 <Container sx={{backgroundColor: '#212121', flexWrap:'wrap',}}>
 <Avatar alt="Elijah-Christian"  src={propic} sx={{
+  
   width: 400,
   height: 400,
   left:400,
@@ -65,7 +71,7 @@ fontFamily:'League Spartan', width: 100,
   </Avatar>
   </Container>
  <Box sx={{backgroundColor:'#212121'}}>
-   <Typography sx={{
+   <Typography color="#9575cd" component="body1" sx={{
     fontWeight:'medium',
     fontColor:'#212121',
     fontStyle:'Oblique',
@@ -74,15 +80,12 @@ fontFamily:'League Spartan', width: 100,
     marginLeft: 10,
     marginRight: 10,
     textAlign: 'center'
+    
    }}>
       I am a Front- End Developer, from NY
       but I am based in San Diego, CA. 
-      I have been developing websites and projects independently 
-      for 2 years. I frequently work out of React, MUI, Python and SQL.
-      I graduated from Buffalo State University in 2019, after a stop in HR 
-      I knew Web Development was my passion. I promptly gave up the recruitment/HR space and starting learing how to code.
-      I realized that this is my forever career path, and I am exci Please peruse through my site to learn more!
-      
+      I bring a refreshing perspective to projects that epitomizes satisfied clients 
+      and the Organization.  
    </Typography>
   </Box>
   

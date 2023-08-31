@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Home } from '@mui/icons-material';
 import './menu.css';
 
+
 export default function BasicMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -18,6 +19,7 @@ export default function BasicMenu() {
   
     return (
       <div className='menu'>
+        
         <Button
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
@@ -25,7 +27,8 @@ export default function BasicMenu() {
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
           sx={{alignItems: 'center',
-        color: 'black', backgroundColor:'#424242'
+        color: '#9575cd', backgroundColor:'#424242',
+        
       }}
         >
           Dashboard
