@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import {BrowserRouter, Routes, Route, } from "react-router-dom";
 import Home from './pages/Home';
 import BasicMenu from './components/Menu';
 import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import DadJokeComponent from './dadJoke';
+
 
 const theme = createTheme({
   palette:{
@@ -31,11 +31,14 @@ const theme = createTheme({
   }
   });
 
-  
-
+ // const url = 'https://dad-jokes.p.rapidapi.com/random/joke';
+ // "b5e892b6abmsh21c7215beb4fc40p19d633jsn9b0fadd6d271", api key
 function App(props) {
   
   
+  
+
+
   return (
     <ThemeProvider theme={theme}>
     <div className="landing-page">
@@ -62,10 +65,9 @@ function App(props) {
       
     </div>
     <footer className='footer'>
-    <>
-      <DadJokeComponent />
+    
       
-    </>
+    
     </footer>
     </ThemeProvider>
   );

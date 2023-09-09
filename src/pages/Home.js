@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import propic from './propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
-
+import DadJokeComponent from './dadJoke';
 
 const Home = () => (
   
@@ -88,7 +88,9 @@ fontFamily:'League Spartan'}}>
       and the Organization.  
    </Typography>
   </Box>
-  
+  <Box>
+    <DadJokeComponent />
+  </Box>
   </div>
   
 )
