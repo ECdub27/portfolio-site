@@ -43,7 +43,7 @@ flex:'auto',
 width: 900,
 backgroundColor:'#212121',
 }}>
-<Box sx={{ backgroundColor:'#212121', }}>
+<Box sx={{ backgroundColor:'#212121',  }}>
   <Grid container rowSpacing={12}>
     <Grid item xs={8}>
   <Typography variant="h1" component="h2" color="#9575cd" sx={{

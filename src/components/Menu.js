@@ -45,7 +45,7 @@ export default function BasicMenu() {
           }}
           sx={{alignContent:'flex-end'}}
         >
-          <Link to="https://github.com/ECdub27/portfolio-site/blob/master/src/Jr%20dev%20resume%20EC%20Wiegand.pdf" exact component={MenuItem}>
+          <Link to="https://github.com/ECdub27/portfolio-site/blob/master/src/EC%20Wiegand%20DevResume.pdf" exact component={MenuItem}>
           
           <MenuItem onClick={handleClose} sx={{display:'inline-block' , backgroundColor:'primary'}}>Resume</MenuItem>
           </Link>
