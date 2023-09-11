@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import Container from '@mui/material/Container';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Box from '@mui/material/Box';
@@ -7,10 +7,10 @@ import Avatar from '@mui/material/Avatar';
 import propic from './propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
-import DadJokeComponent from './dadJoke';
+
 
 const Home = () => (
-  
+
    <div className='Home'>
        
     <Container  sx={{textAlign:'center',
@@ -89,7 +89,7 @@ fontFamily:'League Spartan'}}>
    </Typography>
   </Box>
   <Box>
-    <DadJokeComponent />
+    
   </Box>
   </div>
   

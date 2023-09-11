@@ -5,7 +5,7 @@ import BasicMenu from './components/Menu';
 import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
+import axios from 'axios';
 
 const theme = createTheme({
   palette:{
@@ -30,12 +30,27 @@ const theme = createTheme({
     },
   }
   });
-
- // const url = 'https://dad-jokes.p.rapidapi.com/random/joke';
- // "b5e892b6abmsh21c7215beb4fc40p19d633jsn9b0fadd6d271", api key
+  const options = {
+    method: 'GET',
+    url: 'https://dad-jokes.p.rapidapi.com/random/joke',
+    headers: {
+      'X-RapidAPI-Key': 'b5e892b6abmsh21c7215beb4fc40p19d633jsn9b0fadd6d271',
+      'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
+    }
+  };
+ 
 function App(props) {
   
-  
+  const [joke, setJoke] = useState('');
+
+  useEffect(() =>{
+    try {
+      const response =  axios.request(options);
+      setJoke(response.data.setup + '...' + response.data.punchline);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
   
 
 
@@ -65,7 +80,8 @@ function App(props) {
       
     </div>
     <footer className='footer'>
-    
+    <h2>Dad Joke of the Day is: </h2>
+    <p>{joke}</p>
       
     
     </footer>
