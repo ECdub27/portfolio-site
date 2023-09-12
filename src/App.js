@@ -33,20 +33,22 @@ const theme = createTheme({
   const options = {
     method: 'GET',
     url: 'https://dad-jokes.p.rapidapi.com/random/joke',
+    params: {punchline: '', setup:''},
     headers: {
       'X-RapidAPI-Key': 'b5e892b6abmsh21c7215beb4fc40p19d633jsn9b0fadd6d271',
       'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
+      
     }
   };
  
 function App(props) {
   
-  const [joke, setJoke] = useState('');
+  const [joke, setJoke] = useState(false);
 
   useEffect(() =>{
     try {
       const response =  axios.request(options);
-      setJoke(response.data.setup + '...' + response.data.punchline);
+      setJoke(typeof response);
     } catch (error) {
       console.error(error);
     }
