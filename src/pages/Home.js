@@ -37,26 +37,24 @@ width: 100
       </Grid>
    </Container>
 
-<Container sx={{margin: 0, 
+<Container sx={{margin: 'auto', 
 justifyContent:'flex-start',
 flex:'auto', 
-width: 900,
 backgroundColor:'#212121',
 }}>
-<Box sx={{ backgroundColor:'#212121',  }}>
-  <Grid container rowSpacing={12}>
-    <Grid item xs={8}>
+<Box sx={{ backgroundColor:'#212121', textAlign:'center' }}>
   <Typography variant="h1" component="h2" color="#9575cd" sx={{
-fontFamily:'League Spartan'}}>
+fontFamily:'League Spartan',
+letterSpacing: 2,
+ lineHeight: 1,
+ }}>
     Elijah-Christian "EC" Wiegand 
   </Typography>
-  </Grid>
-  </Grid>
   </Box>
   
 </Container>
 
-<Container sx={{backgroundColor: '#212121', flexWrap:'wrap',}}>
+<Container sx={{backgroundColor: '#212121', flexWrap:'wrap', margin:'auto'}}>
 <Avatar alt="Elijah-Christian"  src={propic} sx={{
   
   width: 400,
@@ -70,10 +68,10 @@ fontFamily:'League Spartan'}}>
   
   </Avatar>
   </Container>
- <Box sx={{backgroundColor:'#212121'}}>
-   <Typography color="#9575cd" component="body1" sx={{
+ <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
+   <Typography color="white" component="body1" sx={{
     fontWeight:'medium',
-    fontColor:'#212121',
+    fontColor:'white',
     fontStyle:'Oblique',
     marginTop: 0,
     fontFamily: 'Inter',
