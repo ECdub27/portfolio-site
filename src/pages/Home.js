@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import react from 'react';
 import Container from '@mui/material/Container';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Box from '@mui/material/Box';
@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import propic from './propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Home = () => (
 
@@ -47,6 +47,7 @@ backgroundColor:'#212121',
 fontFamily:'League Spartan',
 letterSpacing: 2,
  lineHeight: 1,
+ marginBottom: 4,
  }}>
     Elijah-Christian "EC" Wiegand 
   </Typography>
@@ -63,17 +64,18 @@ letterSpacing: 2,
   backgroundColor:'#212121',
   margin: 0,
   marginLeft: 0,
+  marginBottom: 5,
 
 }}>
   
   </Avatar>
   </Container>
  <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
-   <Typography color="white" component="body1" sx={{
+   <Typography color="white"component="body1" sx={{
     fontWeight:'medium',
     fontColor:'white',
     fontStyle:'Oblique',
-    marginTop: 0,
+    marginTop: 20,
     fontFamily: 'Inter',
     marginLeft: 10,
     marginRight: 10,
@@ -86,8 +88,17 @@ letterSpacing: 2,
       and the Organization.  
    </Typography>
   </Box>
-  <Box>
+  
+  <Box sx={{marginTop: 10 }}>
     
+    <Typography color="#9575cd" sx={{  fontweight:'medium', textAlign:'center',}}>
+  
+    Made With 
+    <FavoriteIcon sx={{
+      color: 'red'
+    }}/>
+    
+    </Typography>
   </Box>
   </div>
   
