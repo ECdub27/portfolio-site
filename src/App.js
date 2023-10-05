@@ -33,8 +33,16 @@ const theme = createTheme({
   
  
 function App(props) {
-  
-  
+  const [joke, setJoke] = useState({});
+
+  const fetchJoke = async () => {
+    const response =  await fetch('https://v2.jokeapi.dev/joke/Programming')
+    const data = await response.json();
+    setJoke(data);
+  }
+  useEffect(() =>{
+    fetchJoke();
+  },[])
   return (
     <ThemeProvider theme={theme}>
     <div className="landing-page">
