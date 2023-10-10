@@ -1,4 +1,4 @@
-import react from 'react';
+
 import Container from '@mui/material/Container';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Box from '@mui/material/Box';
