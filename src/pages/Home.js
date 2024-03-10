@@ -8,7 +8,7 @@ import propic from './propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import '.
+
 const Home = () => (
 
    <div className='Home'>
