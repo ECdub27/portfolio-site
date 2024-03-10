@@ -8,7 +8,7 @@ import propic from './propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import '.
 const Home = () => (
 
    <div className='Home'>
@@ -88,7 +88,11 @@ letterSpacing: 2,
       and the Organization.  
    </Typography>
   </Box>
-  
+  <h2>Please take the time to see some of my Projects</h2>
+
+  <Paper>
+   <a href alt='refreshed-news project'> <img src={'src/refreshedNews.png'} /> </a>
+  </Paper>
   <Box sx={{marginTop: 10 }}>
     
     <Typography color="#9575cd" sx={{  fontweight:'medium', textAlign:'center',}}>
