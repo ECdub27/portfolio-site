@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DadJokeSimpleSnackbar from '../components/dadJokeSnackbar';
 import './home.css';
+import ContactForm from '../components/contactForm';
 const Home = () => (
   
    <div className='Home'>
@@ -125,7 +126,7 @@ letterSpacing: 2,
   <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
     <Typography color="white"component="body1" sx={{ fontFamily:'League Spartan',}}>
         <div id='Contact-Form'>
-
+        <ContactForm />
         </div>
 
     </Typography>
