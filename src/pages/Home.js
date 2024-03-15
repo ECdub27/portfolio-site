@@ -8,9 +8,10 @@ import propic from './propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import DadJokeSimpleSnackbar from '../components/dadJokeSnackbar';
+import './home.css';
 const Home = () => (
-
+  
    <div className='Home'>
        
     <Container  sx={{textAlign:'center',
@@ -18,7 +19,8 @@ const Home = () => (
 padding: 0,
 flexWrap:'wrap',
 flex:'auto',
-width: 100
+width: 100,
+marginLeft: 20,
 }}
   >
     <Grid container spacing={4}>
@@ -88,6 +90,46 @@ letterSpacing: 2,
       and the Organization.  
    </Typography>
   </Box>
+
+  <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
+  <Typography color="white"component="body1" sx={{ fontFamily:'League Spartan',
+letterSpacing: 2,
+ lineHeight: 1,}}>
+       <div id='Projects'>
+
+        <h2>Here are some of my projects:</h2>
+
+        <section>
+          <h3>Music Player</h3>
+          <p>Nice Clean Music Player</p>
+          <a href=''> <img src=''  alt='' />  </a>
+        </section>
+        <section>
+          <h3>Refreshed News</h3>
+          <p>A News app restrained by API usage but this was an earlier projected expected to show growth </p>
+          <a href=''> <img src='refreshedNews.png'  alt='Refreshed News Project' />  </a>
+        </section>
+        <section>
+          <h3>Project 3</h3>
+          <p>Simply Blog Website with my own personal touch!</p>
+          <a href=''> <img src=''  alt='' />  </a>
+        </section>
+       </div>
+       </Typography>
+    </Box>
+
+   <div> 
+    <DadJokeSimpleSnackbar />
+   </div>
+
+  <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
+    <Typography color="white"component="body1" sx={{ fontFamily:'League Spartan',}}>
+        <div id='Contact-Form'>
+
+        </div>
+
+    </Typography>
+    </Box>
   
   <Box sx={{marginTop: 10 }}>
     
