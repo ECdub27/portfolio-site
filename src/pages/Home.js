@@ -33,7 +33,7 @@ marginLeft: 20,
         ewiegand51@gmail.com
       </Typography>
       <Link to='mailto:ewiegand51@gmail.com' exact component={ContactMailIcon}>
-      <ContactMailIcon  />
+      <ContactMailIcon  justifyContent='flex-end'sx={{marginLeft:100}} />
       </Link>
       </Grid>
       </Grid>
