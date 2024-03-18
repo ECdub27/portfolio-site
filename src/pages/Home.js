@@ -8,8 +8,8 @@ import propic from './propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import DadJokeSimpleSnackbar from '../components/dadJokeSnackbar';
 import './home.css';
+import ContactForm from '../components/contactForm';
 const Home = () => (
   
    <div className='Home'>
@@ -107,25 +107,25 @@ letterSpacing: 2,
         <section>
           <h3>Refreshed News</h3>
           <p>A News app restrained by API usage but this was an earlier projected expected to show growth </p>
-          <a href=''> <img src='refreshedNews.png'  alt='Refreshed News Project' />  </a>
+          <a href='https://refreshednewstest.netlify.app/'> <img src='refreshedNews.png'  alt='Refreshed News Project' />  </a>
         </section>
         <section>
           <h3>Project 3</h3>
-          <p>Simply Blog Website with my own personal touch!</p>
+          <p>Simple Dashboard with my own personal touch!</p>
           <a href=''> <img src=''  alt='' />  </a>
         </section>
        </div>
        </Typography>
     </Box>
 
-   <div> 
-    <DadJokeSimpleSnackbar />
-   </div>
+  <div> 
+    
+  </div>
 
   <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
     <Typography color="white"component="body1" sx={{ fontFamily:'League Spartan',}}>
         <div id='Contact-Form'>
-
+         <ContactForm />
         </div>
 
     </Typography>

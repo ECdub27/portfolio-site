@@ -1,7 +1,22 @@
 import React, {useRef} from 'react';
 import emailjs from '@emailjs/browser';
+import './contactForm.css';
+import Textfield from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import  FormControl  from '@mui/material/FormControl';
+
+import  Paper  from '@mui/material/Paper';
+import { styled } from '@mui/system';
+import { purple  }  from '@mui/material/colors';
 
 
+const ColorButton = styled(Button)(({ theme }) => ({
+        color: theme.palette.getContrastText(purple[500]),
+        backgroundColor: purple[500],
+        '&:hover': {
+            backgroundColor: purple[700],
+        },
+}));
 
 const ContactForm = () => {
  const form = useRef();
@@ -20,21 +35,24 @@ const ContactForm = () => {
 
 
     return (
-        <form ref={form} onSubmit={sendEmail}>
+   
+        <div className='form-background'>
+            <h1>Contact Me</h1>
+            <Paper variant='outlined' elevation={12} color='black' sx={{}}>
+        <FormControl ref={form} onSubmit={sendEmail}>
             <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" className="form-control" id="name" />
+               <Textfield  label='Name'></Textfield>
             </div>
             <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" className="form-control" id="email" />
+            <Textfield  label='Email'></Textfield>
             </div>
             <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea className="form-control" id="message" rows="3"></textarea>
+            <Textfield   label='Message'></Textfield>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+            <ColorButton variant='outlined'  onSubmit={sendEmail} type="submit" >Submit</ColorButton>
+        </FormControl>
+        </Paper>
+        </div>
     );
 
 };

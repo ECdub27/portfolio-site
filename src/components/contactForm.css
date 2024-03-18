@@ -1,0 +1,25 @@
+
+  
+  /* Add a background color and some padding around the form */
+ .form-group{
+    margin: 10px;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid rgb(1, 14, 15);
+    border-radius: 3px;
+ }
+ .form-background{
+    background-color: #9575cd;
+ }
+
+ .form-control{
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid ;
+    border-radius: 3px;
+    width: 50%;
+ }
+ @media (max-width: 600px) {
+    .form-control {
+       flex-direction: column-reverse;
+    }
+ }
