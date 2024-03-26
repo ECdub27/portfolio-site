@@ -29,8 +29,9 @@ marginLeft: 20,
       textTransform:'uppercase',
       fontweight: 'bold',
       fontFamily: 'League Spartan',
+      marginLeft:100,
       }}>
-        ewiegand51@gmail.com
+       
       </Typography>
       <Link to='mailto:ewiegand51@gmail.com' exact component={ContactMailIcon}>
       <ContactMailIcon  justifyContent='flex-end'sx={{marginLeft:100}} />
@@ -84,8 +85,8 @@ letterSpacing: 2,
     textAlign: 'center'
     
    }}>
-      I am a Front- End Developer, from NY
-      but I am based in San Diego, CA. 
+      I am a Front- End Developer, from NY! 
+      I am just a tech geek, who has some experience in the field of web development. 
       I bring a refreshing perspective to projects that epitomizes satisfied clients 
       and the Organization.  
    </Typography>
@@ -107,7 +108,7 @@ letterSpacing: 2,
         <section>
           <h3>Refreshed News</h3>
           <p>A News app restrained by API usage but this was an earlier projected expected to show growth </p>
-          <a href='https://refreshednewstest.netlify.app/'> <img src='refreshedNews.png'  alt='Refreshed News Project' />  </a>
+          <a href='https://refreshednewstest.netlify.app/'> <img src='src/refreshedNews.png'  alt='Refreshed News Project' />  </a>
         </section>
         <section>
           <h3>Project 3</h3>
