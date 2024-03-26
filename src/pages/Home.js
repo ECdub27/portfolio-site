@@ -101,18 +101,18 @@ letterSpacing: 2,
         <h2>Here are some of my projects:</h2>
 
         <section>
-          <h3>Music Player</h3>
-          <p>Nice Clean Music Player</p>
+          <h3>LFC Information:  </h3>
+          <p>Easy little project on my favorite footy team! </p>
           <a href=''> <img src=''  alt='' />  </a>
         </section>
         <section>
-          <h3>Refreshed News</h3>
+          <h3>Refreshed News: </h3>
           <p>A News app restrained by API usage but this was an earlier projected expected to show growth </p>
-          <a href='https://refreshednewstest.netlify.app/'> <img src='src/refreshedNews.png'  alt='Refreshed News Project' />  </a>
+          <a href='https://refreshednewstest.netlify.app/'> <img src='src/refreshedNews.png'alt='Refreshed News project'/>  </a>
         </section>
         <section>
-          <h3>Project 3</h3>
-          <p>Simple Dashboard with my own personal touch!</p>
+          <h3>Project 3 : </h3>
+          <p>Landing page</p>
           <a href=''> <img src=''  alt='' />  </a>
         </section>
        </div>

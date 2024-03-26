@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
 import './contactForm.css';
 import Textfield from '@mui/material/TextField';
@@ -8,6 +8,9 @@ import  FormControl  from '@mui/material/FormControl';
 import  Paper  from '@mui/material/Paper';
 import { styled } from '@mui/system';
 import { purple  }  from '@mui/material/colors';
+import { Link } from 'react-router-dom';
+import Stack from '@mui/material/Stack';
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -19,10 +22,15 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 const ContactForm = () => {
+
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [message, setMessage] = useState('');
  const form = useRef();
 
     const sendEmail =(e) =>{
         e.preventDefault();
+        alert('I look forward to hearing from you soon!')
     }
 
     emailjs.sendForm('service_vtsq4ae','template_gb7nefs', form.current, {
@@ -37,21 +45,22 @@ const ContactForm = () => {
     return (
    
         <div className='form-background'>
-            <h1>Contact Me</h1>
-            <Paper variant='outlined' elevation={12} color='black' sx={{}}>
-        <FormControl ref={form} onSubmit={sendEmail}>
-            <div className="form-group">
-               <Textfield  label='Name'></Textfield>
-            </div>
-            <div className="form-group">
-            <Textfield  label='Email'></Textfield>
-            </div>
-            <div className="form-group">
-            <Textfield   label='Message'></Textfield>
-            </div>
-            <ColorButton variant='outlined'  onSubmit={sendEmail} type="submit" >Submit</ColorButton>
-        </FormControl>
-        </Paper>
+            <h1 className='contact'>Contact Me</h1>
+            <div className="cards">
+
+            
+        <form onSubmit={sendEmail} ref={form} action={<Link to='/'/>}>
+
+            <FormControl>
+                <Stack spacing={2 }direction="row" sx={{marginBottom:4, paddingTop:4}}>
+                <Textfield required size='large' variant='outlined'  value={name}label='Name' onChange={e => setName(e.target.value)} fullWidth sx={{mb:4}}> </Textfield>
+                <Textfield required size='large' variant='outlined' value={email} label='Email' onChange={e => setEmail(e.target.value)} fullWidth sx={{mb:4}}></Textfield>
+                <Textfield required size='large' variant='outlined' value={message} label='Message' onChange={e => setMessage(e.target.value)} fullWidth sx={{mb:4}}>  <TextareaAutosize/> </Textfield> 
+                </Stack>
+                <ColorButton variant='outlined' onSubmit={sendEmail} type="submit">Submit</ColorButton>
+            </FormControl>
+        </form>
+        </div>
         </div>
     );
 

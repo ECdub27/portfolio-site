@@ -8,10 +8,21 @@
     border-radius: 3px;
     
  }
- .form-background{
-    background-color: #9575cd;
+ .contact{
+   display: flex;
+   flex-direction: row;
  }
+ .form-background{
+    background-color: #7a777b;
+    display: flex;
+    justify-content: space-around;
 
+ }
+.cards{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
  .form-control{
     margin-bottom: 20px;
     padding: 12px;
