@@ -108,7 +108,7 @@ letterSpacing: 2,
         <section>
           <h3>Refreshed News: </h3>
           <p>A News app restrained by API usage but this was an earlier projected expected to show growth </p>
-          <a href='https://refreshednewstest.netlify.app/'> <img src='src/refreshedNews.png'alt='Refreshed News project'/>  </a>
+          <a href='https://6604766566e1ec4756edcd09--refreshednewstest.netlify.app/'> <img src='src/refreshedNews.png'alt='Refreshed News project'/>  </a>
         </section>
         <section>
           <h3>Project 3 : </h3>

@@ -49,7 +49,7 @@ const [message, setMessage] = useState('');
             <div className="cards">
 
             
-        <form onSubmit={sendEmail} ref={form} action={<Link to='/'/>}>
+        <form ref={form} action={<Link to='/'/>}>
 
             <FormControl>
                 <Stack spacing={2 }direction="row" sx={{marginBottom:4, paddingTop:4}}>
