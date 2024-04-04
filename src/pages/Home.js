@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './home.css';
 import ContactForm from '../components/contactForm';
+import refreshedNews from './refreshedNews.png';
 const Home = () => (
   
    <div className='Home'>
@@ -88,7 +89,8 @@ letterSpacing: 2,
       I am a Front- End Developer, from NY! 
       I am just a tech geek, who has some experience in the field of web development. 
       I bring a refreshing perspective to projects that epitomizes satisfied clients 
-      and the Organization.  
+      and the Organization. Projects and people develop overtime, this portfolio is a living document 
+      please check back to see anything new tht I am working on! 
    </Typography>
   </Box>
 
@@ -107,12 +109,15 @@ letterSpacing: 2,
         </section>
         <section>
           <h3>Refreshed News: </h3>
-          <p>A News app restrained by API usage but this was an earlier projected expected to show growth </p>
-          <a href='https://main--refreshednewstest.netlify.app/'> <img src='src/refreshedNews.png'alt='Refreshed News project'/>  </a>
+          <p>A News app restrained by API usage but this was an earlier projected expected to show growth- 
+            please be so kind to click the link to the loom to see it here on a dev server! 
+          </p>
+          <a href='https://www.loom.com/share/2a91706e4ca141858de41a3bf2a612ba'> <img  className='refreshed-news-photo'src={refreshedNews} alt='Refreshed News project'/>  </a>
         </section>
         <section>
           <h3>Project 3 : </h3>
-          <p>Landing page</p>
+          <p>IMC DashBoard </p>
+          <p>This project was to show a mock internal Dashboard for a client looking to start their own small business</p>
           <a href=''> <img src=''  alt='' />  </a>
         </section>
        </div>

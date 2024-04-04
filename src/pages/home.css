@@ -10,3 +10,7 @@ section {
     display: flex;
     flex-wrap: wrap;
 }
+.refreshed-news-photo{
+    width:50%;
+    height: 90%;
+}
