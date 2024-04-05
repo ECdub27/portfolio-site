@@ -11,7 +11,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import './home.css';
 import ContactForm from '../components/contactForm';
 import refreshedNews from './refreshedNews.png';
-import groupChatGen from './groupChatNameGen.png';
+import groupChatGen from './GroupChatNameGen.png';
 const Home = () => (
   
    <div className='Home'>
@@ -104,7 +104,9 @@ letterSpacing: 2,
         <h2>Here are some of my projects:</h2>
 
         <section>
+          <span>
           <h3>LFC Information:  </h3>
+          </span>
           <p>Easy little project on my favorite footy team! </p>
           <a href=''> <img src=''  alt='' />  </a>
         </section>
@@ -116,9 +118,11 @@ letterSpacing: 2,
           <a href='https://www.loom.com/share/2a91706e4ca141858de41a3bf2a612ba'> <img  className='refreshed-news-photo'src={refreshedNews} alt='Refreshed News project'/>  </a>
         </section>
         <section>
+          <span>
           <h3>Project 3 : </h3>
           <p>Group Chat Name Generator </p>
-          <p>This project was to show a mock internal Dashboard for a client looking to start their own small business</p>
+          </span>
+          <p>Fun Little project to show some personality, click away and heres some inspo for your next groupchat name!</p>
           <a href='https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/'> <img src={groupChatGen}  alt='Group Chat Generator by EC ' />  </a>
         </section>
        </div>
