@@ -11,6 +11,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import './home.css';
 import ContactForm from '../components/contactForm';
 import refreshedNews from './refreshedNews.png';
+import groupChatGen from './groupChatNameGen.png';
 const Home = () => (
   
    <div className='Home'>
@@ -109,16 +110,16 @@ letterSpacing: 2,
         </section>
         <section>
           <h3>Refreshed News: </h3>
-          <p>A News app restrained by API usage but this was an earlier projected expected to show growth- 
+          <p> Click on the image to see a News app restrained by API usage but this was an earlier projected expected to show growth- 
             please be so kind to click the link to the loom to see it here on a dev server! 
           </p>
           <a href='https://www.loom.com/share/2a91706e4ca141858de41a3bf2a612ba'> <img  className='refreshed-news-photo'src={refreshedNews} alt='Refreshed News project'/>  </a>
         </section>
         <section>
           <h3>Project 3 : </h3>
-          <p>IMC DashBoard </p>
+          <p>Group Chat Name Generator </p>
           <p>This project was to show a mock internal Dashboard for a client looking to start their own small business</p>
-          <a href=''> <img src=''  alt='' />  </a>
+          <a href='https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/'> <img src={groupChatGen}  alt='Group Chat Generator by EC ' />  </a>
         </section>
        </div>
        </Typography>
