@@ -12,7 +12,7 @@ import './home.css';
 import ContactForm from '../components/contactForm';
 import refreshedNews from './refreshedNews.png';
 import groupChatGen from './GroupChatNameGen.png';
-import Liverpool from './Liverpoolshield.jpg'
+import Liverpool from './Liverpoolshield.jpg';
 const Home = () => (
   
    <div className='Home'>
