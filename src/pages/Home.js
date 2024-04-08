@@ -12,6 +12,7 @@ import './home.css';
 import ContactForm from '../components/contactForm';
 import refreshedNews from './refreshedNews.png';
 import groupChatGen from './GroupChatNameGen.png';
+import Liverpool from './Liverpoolshield.jpg'
 const Home = () => (
   
    <div className='Home'>
@@ -108,7 +109,7 @@ letterSpacing: 2,
           <h3>LFC Information:  </h3>
           </span>
           <p>Easy little project on my favorite footy team! </p>
-          <a href=''> <img src=''  alt='' />  </a>
+          <a href=''> <img src={Liverpool}  alt='Link To LFC Project' />  </a>
         </section>
         <section>
           <h3>Refreshed News: </h3>
