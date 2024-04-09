@@ -107,8 +107,9 @@ letterSpacing: 2,
         <section>
           <span>
           <h3>LFC Information:  </h3>
-          </span>
+          
           <p>Easy little project on my favorite footy team! </p>
+          </span>
           <a href='https://psychedelic-observation-production.up.railway.app/'> <img src={Liverpool}  alt='Link To LFC Project' />  </a>
         </section>
         <section>
