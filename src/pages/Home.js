@@ -92,7 +92,7 @@ letterSpacing: 2,
       I am just a tech geek, who has some experience in the field of web development. 
       I bring a refreshing perspective to projects that epitomizes satisfied clients 
       and the Organization. Projects and people develop overtime, this portfolio is a living document 
-      please check back to see anything new tht I am working on! 
+      please check back to see anything new that I am working on! 
    </Typography>
   </Box>
 
