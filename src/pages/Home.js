@@ -108,10 +108,14 @@ letterSpacing: 2,
           <span>
           <h3>LFC Information:  </h3>
           
-          <p>Easy little project on my favorite footy team! </p>
+          <p>Easy little project on my favorite footy team! 
+
+          </p>
           </span>
-          <a href='https://psychedelic-observation-production.up.railway.app/'> <img src={Liverpool}  alt='Link To LFC Project' />  </a>
+         
         </section>
+        
+        <a href='https://psychedelic-observation-production.up.railway.app/'> <img src={Liverpool}  alt='Link To LFC Project' />  </a>
         <section>
           <h3>Refreshed News: </h3>
           <p> Click on the image to see a News app restrained by API usage but this was an earlier projected expected to show growth- 
@@ -119,6 +123,7 @@ letterSpacing: 2,
           </p>
           <a href='https://www.loom.com/share/2a91706e4ca141858de41a3bf2a612ba'> <img  className='refreshed-news-photo'src={refreshedNews} alt='Refreshed News project'/>  </a>
         </section>
+
         <section>
           <span>
           <h3>Project 3 : </h3>
