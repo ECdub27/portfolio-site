@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './home.css';
-import ContactForm from '../components/contactForm';
+// import ContactForm from '../components/contactForm';
 import refreshedNews from './refreshedNews.png';
 import groupChatGen from './GroupChatNameGen.png';
 import Liverpool from './Liverpoolshield.jpg';
@@ -17,50 +17,47 @@ const Home = () => (
   
    <div className='Home'>
        
-    <Container  sx={{textAlign:'center',
-  backgroundColor:'#212121',
-padding: 0,
-flexWrap:'wrap',
-flex:'auto',
-width: 100,
-marginLeft: 20,
-}}
-  >
-    <Grid container spacing={4}>
-      <Grid item xs={8}>
-<Typography color="#9575cd" sx={{
-      textTransform:'uppercase',
-      fontweight: 'bold',
-      fontFamily: 'League Spartan',
-      marginLeft:100,
-      }}>
-       
-      </Typography>
-      <Link to='mailto:ewiegand51@gmail.com' exact component={ContactMailIcon}>
-      <ContactMailIcon  justifyContent='flex-end'sx={{marginLeft:100}} />
-      </Link>
-      </Grid>
-      </Grid>
-   </Container>
-
-<Container sx={{margin: 'auto', 
-justifyContent:'flex-start',
-flex:'auto', 
-backgroundColor:'#212121',
-}}>
-<Box sx={{ backgroundColor:'#212121', textAlign:'center' }}>
-  <Typography variant="h1" component="h2" color="#9575cd" sx={{
-fontFamily:'League Spartan',
-letterSpacing: 2,
- lineHeight: 1,
- marginBottom: 4,
- }}>
-    Elijah-Christian "EC" Wiegand 
-  </Typography>
-  </Box>
+  {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
+<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-gray-200 bg-transparent sm:block'>
+  <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
+ 
+  <Avatar alt="Elijah-Christian"  src={propic} sx={{
   
-</Container>
+  width: 400,
+  height: 400,
+  left:400,
+  backgroundColor:'#212121',
+  margin: 0,
+  marginLeft: 0,
+  marginBottom: 5,
 
+}}/>
+<button data-collapse-toggle="navbar-default"
+type="button"
+className='inline-flex- h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden'>
+  <span className='sr-only'>Menu</span>
+</button>
+<div className='hidden w-full md:block md:w-auto' id="navbar-default">
+ <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt:0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse'>
+    <li>
+      <Link to='/'>Home</Link>
+    </li>
+    <li>
+      <Link to='/about'>About</Link>
+    </li>
+    <li>
+      <Link to='/projects'>Projects</Link>
+    </li>
+    <li>
+      <Link to='/contact'>Contact</Link>
+    </li>
+  </ul>
+  </div>
+  </div>
+</nav>
+
+
+{/* this is where I had the blurb about me and  */}
 <Container sx={{backgroundColor: '#212121', flexWrap:'wrap', margin:'auto'}}>
 <Avatar alt="Elijah-Christian"  src={propic} sx={{
   
@@ -77,7 +74,7 @@ letterSpacing: 2,
   </Avatar>
   </Container>
  <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
-   <Typography color="white"component="body1" sx={{
+   <Typography color="white" sx={{
     fontWeight:'medium',
     fontColor:'white',
     fontStyle:'Oblique',
@@ -97,9 +94,10 @@ letterSpacing: 2,
   </Box>
 
   <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
-  <Typography color="white"component="body1" sx={{ fontFamily:'League Spartan',
+  <Typography color="white"  sx={{ fontFamily:'League Spartan',
 letterSpacing: 2,
  lineHeight: 1,}}>
+  {/* projects section we want to have pan across in rows  */}
        <div id='Projects'>
 
         <h2>Here are some of my projects:</h2>
@@ -141,9 +139,9 @@ letterSpacing: 2,
   </div>
 
   <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
-    <Typography color="white"component="body1" sx={{ fontFamily:'League Spartan',}}>
+    <Typography color="white"  sx={{ fontFamily:'League Spartan',}}>
         <div id='Contact-Form'>
-         <ContactForm />
+         {/* <ContactForm /> */}
         </div>
 
     </Typography>

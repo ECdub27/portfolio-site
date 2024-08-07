@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
-import BasicMenu from './components/Menu';
+import Home from './pages/Home';  
+// import BasicMenu from './components/Menu';
 import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -22,13 +22,13 @@ const theme = createTheme({
       dark: '#67008b',
       contrastText: '#f8f4fa'
     },
-    typography:{
-      fontFamily: [
-        'League Spartan',
-        'Montserrat',
-         'Inter'
-      ].join(','),
-    },
+    // typography:{
+      // fontFamily: [
+        // 'League Spartan',
+        // 'Montserrat',
+        //  'Inter'
+      // ].join(','),
+    // },
   }
   });
   
@@ -45,13 +45,13 @@ function App() {
         
     <BrowserRouter>
     
-    <BasicMenu />
+    {/* <BasicMenu /> */}
    
 
     
     <Routes>
       
-      <Route path="/" exact element={<Home sx={{color: 'primary'}}/>}/>
+      <Route path="/" element={<Home />}/>
       <Route path="/:id" />
       
       </Routes>
