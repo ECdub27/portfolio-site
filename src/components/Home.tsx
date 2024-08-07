@@ -4,21 +4,22 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
-import propic from './propic.png';
+import propic from '../../public/imgs/propic.png';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import './home.css';
 // import ContactForm from '../components/contactForm';
-import refreshedNews from './refreshedNews.png';
-import groupChatGen from './GroupChatNameGen.png';
-import Liverpool from './Liverpoolshield.jpg';
+import refreshedNews from '../../public/imgs/refreshedNews.png';
+import groupChatGen from '../../public/imgs/GroupChatNameGen.png';
+import Liverpool from '../../public/imgs/Liverpoolshield.jpg';
 const Home = () => (
   
-   <div className='Home'>
-       
+  <div className="Home">
+  <div className="bg-red-500 p-4">
+    <p className="text-white">If this text is white and the background is red, Tailwind CSS is working!</p>
+  </div> 
   {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
-<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-gray-200 bg-transparent sm:block'>
+<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-white-200 bg-transparent sm:block'>
   <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
  
   <Avatar alt="Elijah-Christian"  src={propic} sx={{
