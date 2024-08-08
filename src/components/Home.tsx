@@ -12,34 +12,25 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import refreshedNews from '../../public/imgs/refreshedNews.png';
 import groupChatGen from '../../public/imgs/GroupChatNameGen.png';
 import Liverpool from '../../public/imgs/Liverpoolshield.jpg';
+import ProjectCard from './projectCard';  
+import { Children } from 'react';
+
+// palette colors 1AB7FF -blue bright chartruese - 2CF000 202827
 const Home = () => (
   
   <div className="Home">
-  <div className="bg-red-500 p-4">
-    <p className="text-white">If this text is white and the background is red, Tailwind CSS is working!</p>
-  </div> 
-  {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
-<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-white-200 bg-transparent sm:block'>
-  <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
- 
-  <Avatar alt="Elijah-Christian"  src={propic} sx={{
   
-  width: 400,
-  height: 400,
-  left:400,
-  backgroundColor:'#212121',
-  margin: 0,
-  marginLeft: 0,
-  marginBottom: 5,
-
-}}/>
-<button data-collapse-toggle="navbar-default"
+  {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
+<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-[#212121]-200 bg-[#1AB7FF] sm:block'>
+  <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
+ {/* logo here */}
+ <button data-collapse-toggle="navbar-default"
 type="button"
-className='inline-flex- h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden'>
+className='inline-flex- h-10 w-10 items-center bg-[#202827] justify-center rounded-lg p-2 text-sm text-gray hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden'>
   <span className='sr-only'>Menu</span>
 </button>
 <div className='hidden w-full md:block md:w-auto' id="navbar-default">
- <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt:0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse'>
+ <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-[#1AB7FF]-50 p-4 font-medium md:mt:0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse'>
     <li>
       <Link to='/'>Home</Link>
     </li>
@@ -58,108 +49,67 @@ className='inline-flex- h-10 w-10 items-center justify-center rounded-lg p-2 tex
 </nav>
 
 
-{/* this is where I had the blurb about me and  */}
-<Container sx={{backgroundColor: '#212121', flexWrap:'wrap', margin:'auto'}}>
-<Avatar alt="Elijah-Christian"  src={propic} sx={{
+{/* Hero Section */}
+<section className=" flex hero bg-stone-300 justify-center items-center h-screen">
+      <div className="flex-col px-6  mx-auto">
+        <h1 className='px-5 font-bold text-5xl'>Hello, I'm Elijah-Christian</h1>
+        <p className='px-5 font-bold text-3xl'>A passionate developer</p>
+        {/* 3d fun here?  */}
+      </div>
+    </section>
   
-  width: 400,
-  height: 400,
-  left:400,
-  backgroundColor:'#212121',
-  margin: 0,
-  marginLeft: 0,
-  marginBottom: 5,
-
-}}>
-  
-  </Avatar>
-  </Container>
- <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
-   <Typography color="white" sx={{
-    fontWeight:'medium',
-    fontColor:'white',
-    fontStyle:'Oblique',
-    marginTop: 20,
-    fontFamily: 'Inter',
-    marginLeft: 10,
-    marginRight: 10,
-    textAlign: 'center'
-    
-   }}>
-      I am a Front- End Developer, from NY! 
+    {/* About Section */}
+    <section id="about" className="about">
+      <div>
+        <h2>About Me</h2>
+        <p> I am a Front- End Developer, from NY! 
       I am just a tech geek, who has some experience in the field of web development. 
       I bring a refreshing perspective to projects that epitomizes satisfied clients 
       and the Organization. Projects and people develop overtime, this portfolio is a living document 
-      please check back to see anything new that I am working on! 
-   </Typography>
-  </Box>
+      please check back to see anything new that I am working on! </p>
+      </div>
+    </section>
 
-  <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
-  <Typography color="white"  sx={{ fontFamily:'League Spartan',
-letterSpacing: 2,
- lineHeight: 1,}}>
-  {/* projects section we want to have pan across in rows  */}
-       <div id='Projects'>
+    {/* Projects Section */}
+    <section id="projects" className="projects">
+    <div>
 
-        <h2>Here are some of my projects:</h2>
+<h2>Here are some of my projects:</h2>
 
-        <section>
-          <span>
-          <h3>LFC Information:  </h3>
-          
-          <p>Easy little project on my favorite footy team! 
+<section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+<h2 className='text-4xl font-bold mb-4'>Liverpool FC</h2>
+  <ProjectCard title='Liverpool FC' description='A project to show my love for the Reds! Click the image to see more!' image={Liverpool} link={'https://psychedelic-observation-production.up.railway.app/'} />
+<ProjectCard title={'Refreshed News'} description={'A new Refreshing feel to a News website'} image={refreshedNews} link={'https://www.loom.com/share/2a91706e4ca141858de41a3bf2a612ba'} />
+<ProjectCard title={'Group Chat Name Generator'} description={'Group Chat generator with a fun lottie file'} image={groupChatGen} link={'https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/'} />
+</section>
+</div>
+    </section>
 
-          </p>
-          </span>
-         
-        </section>
-        
-        <a href='https://psychedelic-observation-production.up.railway.app/'> <img src={Liverpool}  alt='Link To LFC Project' />  </a>
-        <section>
-          <h3>Refreshed News: </h3>
-          <p> Click on the image to see a News app restrained by API usage but this was an earlier projected expected to show growth- 
-            please be so kind to click the link to the loom to see it here on a dev server! 
-          </p>
-          <a href='https://www.loom.com/share/2a91706e4ca141858de41a3bf2a612ba'> <img  className='refreshed-news-photo'src={refreshedNews} alt='Refreshed News project'/>  </a>
-        </section>
-
-        <section>
-          <span>
-          <h3>Project 3 : </h3>
-          <p>Group Chat Name Generator </p>
-          </span>
-          <p>Fun Little project to show some personality, click away and heres some inspo for your next groupchat name!</p>
-          <a href='https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/'> <img src={groupChatGen}  alt='Group Chat Generator by EC ' />  </a>
-        </section>
-       </div>
-       </Typography>
-    </Box>
-
-  <div> 
-    
+    {/* Contact Section */}
+    <section id="contact" className="contact py-20 bg-[#1AB7FF]-100">
+      <div>
+        <h2 className='text-4xl font-bold mb-4'>Contact</h2>
+        <form>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div>
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+    <p>Made with love</p><p>Made with love</p>
   </div>
 
-  <Box sx={{backgroundColor:'#212121', margin:'auto'}}>
-    <Typography color="white"  sx={{ fontFamily:'League Spartan',}}>
-        <div id='Contact-Form'>
-         {/* <ContactForm /> */}
-        </div>
-
-    </Typography>
-    </Box>
-  
-  <Box sx={{marginTop: 10 }}>
-    
-    <Typography color="#9575cd" sx={{  fontweight:'medium', textAlign:'center',}}>
-  
-    Made With 
-    <FavoriteIcon sx={{
-      color: 'red'
-    }}/>
-    
-    </Typography>
-  </Box>
-  </div>
+ 
   
 )
 export default Home;
