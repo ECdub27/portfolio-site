@@ -1,24 +1,14 @@
-
-import Container from '@mui/material/Container';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
-import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import propic from '../../public/imgs/propic.png';
-import Grid from '@mui/material/Grid';
-import { Link } from 'react-router-dom';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-// import ContactForm from '../components/contactForm';
 import refreshedNews from '../../public/imgs/refreshedNews.png';
 import groupChatGen from '../../public/imgs/GroupChatNameGen.png';
 import Liverpool from '../../public/imgs/Liverpoolshield.jpg';
 import ProjectCard from './projectCard';  
-import { Children } from 'react';
 import ContactForm from './contactForm';
+import ThreeScene from './ThreeScene';
 
 // palette colors 1AB7FF -blue bright chartruese - 2CF000 202827
 const Home = () => (
-  
   <div className="Home">
   
   {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
