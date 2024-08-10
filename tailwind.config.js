@@ -1,3 +1,5 @@
+import { fontFamily } from 'tailwindcss/defaultTheme';  
+import {LeagueSpartan, Merriweather, Inconsolata} from 'tailwindcss/defaultTheme';
 module.exports = {
   content: [
     './index.html',
