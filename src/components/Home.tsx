@@ -25,13 +25,13 @@ className='inline-flex- h-10 w-10 items-center bg-[#white] justify-center rounde
       <a href='#home'>Home</a>
     </li>
     <li className="bg-[#267FF3]">
-      <a   href='/about'>About</a>
+      <a   href='#about'>About</a>
     </li>
     <li className="bg-[#267FF3]">
       <a  href='#projects'>Projects</a>
     </li>
     <li className="bg-[#267FF3]">
-      <a  href='/contact'>Contact</a>
+      <a  href='#contact'>Contact</a>
     </li>
   </ul>
   </div>
@@ -77,7 +77,7 @@ className='inline-flex- h-10 w-10 items-center bg-[#white] justify-center rounde
         <div className=" inline-flex justify-center space-x-4 bg-[#161616] ">
           <ProjectCard title="Liverpool FC" description="A project to show my love for the Reds! Click the image to see more!" image={Liverpool} link="https://psychedelic-observation-production.up.railway.app/" />
           <ProjectCard title="Group Chat Name Generator" description="Group Chat generator with a fun lottie file" image={groupChatGen} link="https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/" />
-          <ProjectCard title="Refreshed News" description="A new Refreshing feel to a News website" image={refreshedNews} link="https://www.loom.com/share/2a91706e4ca141858de41a3bf2a612ba" />
+          <ProjectCard title="Refreshed News" description="A new Refreshing feel to a News website" image={refreshedNews} link="https://vite-refreshed-news-kscixfsrp-ecdub27s-projects.vercel.app/#main" />
         </div>
       </section>
 
