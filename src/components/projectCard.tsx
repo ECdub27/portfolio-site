@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link }) => {
   return (
-    <div className="max-w-sm md:max-w-md lg:max-w-lg rounded overflow-hidden shadow-lg justify-between bg-[#1AB7FF] mx-auto my-4">
+    <div className="max-w-sm md:max-w-md lg:max-w-lg rounded  shadow-lg justify-between bg-[#1AB7FF] mx-auto my-4">
       <div className="aspect-w-16 aspect-h-9">
         <img className="w-full h-full object-cover" src={image} alt={title} />
       </div>

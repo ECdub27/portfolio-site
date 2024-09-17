@@ -6,6 +6,7 @@ import Liverpool from '../../public/imgs/Liverpoolshield.jpg';
 import ProjectCard from './projectCard';  
 import ContactForm from './contactForm';
 import Technologies from './technologies';
+import fam from '../../public/imgs/family.png';
 import { FaAddressCard, FaExclamation, FaHome, FaScrewdriver } from 'react-icons/fa';
 import MainNav from './mainNav';
 
@@ -15,14 +16,14 @@ const Home = () => (
   
   {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
 <MainNav /> 
-
-<div className="w-80 h-[520px] p-6 bg-[#292f36] rounded-tl-full rounded-br-full shadow border-4 border-white flex-col justify-center items-start gap-8 inline-flex">
+<div  className='bg-[#267FF3]'>
+<div className=" mt-5 w-80 h-[520px] z-30 p-6 bg-[#292f36] rounded-tl-full rounded-br-full shadow border-4 border-black flex-col justify-center items-start gap-8 inline-flex">
     <div className="flex-col justify-start items-center gap-8 flex">
         <div className="flex-col justify-start items-center gap-4 flex">
-            <img className="rounded-[64px] border-2 border-[#12f7d6]" src="https://via.placeholder.com/96x96" />
+            <img className="rounded-[64px] border-2 border-[#E0607E]" src={fam} />
             <div className="flex-col justify-start items-center flex">
-                <div className="text-white text-[32px] font-medium font-['IBM Plex Mono'] capitalize leading-[42px]">EC WIegand</div>
-                <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Full-Stack developer</div>
+                <div className="text-white text-[32px] font-medium font-inter capitalize leading-[42px]">EC Wiegand</div>
+                <div className="text-white text-sm font-normal font-inter leading-[18px]">Full Stack developer</div>
             </div>
         </div>
         <div className="flex-col justify-start items-start gap-4 flex">
@@ -31,25 +32,25 @@ const Home = () => (
                     <div className="w-3.5 h-3.5 justify-center items-center flex">
                         <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
                     </div>
-                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">ecdevdub27@outlook.com</div>
+                    <div className="text-white text-sm font-normal font-sans leading-[18px]">ecdevdub27@outlook.com</div>
                 </div>
                 <div className="justify-center items-center gap-4 inline-flex">
                     <div className="w-3.5 h-3.5 justify-center items-center flex">
                         <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
                     </div>
-                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">LI, NY</div>
+                    <div className="text-white text-sm font-normal font-sans leading-[18px]">LI, NY</div>
                 </div>
                 <div className="justify-center items-center gap-4 inline-flex">
                     <div className="w-3.5 h-3.5 justify-center items-center flex">
                         <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
                     </div>
-                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Full-time Developer</div>
+                    <div className="text-white text-sm font-normal font-sans leading-[18px]">Full-time Developer</div>
                 </div>
                 <div className="justify-center items-center gap-4 inline-flex">
                     <div className="w-3.5 h-3.5 justify-center items-center flex">
                         <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
                     </div>
-                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Twitter</div>
+                    <div className="text-white text-sm font-normal font-sans leading-[18px]">Twitter</div>
                 </div>
             </div>
             <div className="justify-start items-start gap-4 inline-flex">
@@ -77,13 +78,13 @@ const Home = () => (
         </div>
     </div>
 </div>
-
+</div>
 
 {/* Hero Section */}
 <section className="flex flex-col md:flex-row bg-[#161616] justify-center items-center h-screen relative">
   <div className="order-2 md:order-1 flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:relative md:left-16 md:top-40 lg:left-24 lg:top-48 lg:space-y-8">
     <div className="text-white text-4xl md:text-6xl lg:text-8xl font-normal font-['League Spartan']">
-      Hi, I’m
+      Hi, I&apos;m
     </div>
     <div className="text-white text-3xl md:text-5xl lg:text-7xl font-normal font-['League Spartan']">
       Elijah-Christian
@@ -98,30 +99,30 @@ const Home = () => (
 </section>
 
 {/* About Section */}
-<section id="about" className="h-autos flex flex-col p-8 w-full bg-[#f0f4f8] bg-about-section bg-cover bg-center h-screen">
+<section id="about" className="h-auto mt-4  flex flex-col p-8 w-full  bg-about-section bg-cover bg-center">
 
-  <div className='h-[104px] px-10 py-4 bg-[#292f36] rounded-tl-[40px] rounded-br-[40px] border-4 border-[#12f7d6] justify-start items-start inline-flex"'>
-  <h2 className="mx-auto text-2xl justify-center items-center font-bold">About Me</h2>
+  <div className='h-[104px] px-10 py-4 bg-[#292f36] rounded-tl-[40px] rounded-br-[40px] border-4 border-[#E0607E] justify-start items-start inline-flex"'>
+  <h2 className="mx-auto text-2xl justify-center text-white font-inter items-center font-bold mb-2">About Me</h2>
 
   </div>
   <div className='h-auto px-10 py-6 bg-[#292f36] rounded-[40px] flex-col justify-start items-start gap-4'>
     {/* add like styled spans of name in a cool way */}
-  <div className='flex-col mt-5 font-league-spartan text-xl text-white text-pretty leading-7 px-5'>
-    <p>
+  <div className='flex-col mt-2 font-league-spartan text-xl text-white text-pretty leading-7 px-5 border-[#E0607E] shadow-lg h-auto '>
+    <p className='hover:z-10 hover:focus text-lg '>
     I am a Full-Stack Developer, from NY! I am just a tech geek, who has some experience in the field of web development. 
     I bring a refreshing perspective to projects that epitomizes satisfied clients and the Organization. 
+    <br />  
     I am a believer, that sometimes "Haste is Waste" and sometimes Less is More. 
     Projects and people develop overtime, this portfolio is a living document please check back to see anything new that I am working on!
     </p>
+    <p className='hover:z-10 hover:focus text-lg'>
+      Here are some other of the various technologies I use!
+      </p>  
   </div>
  <Technologies /> 
   </div>
-
-    
 </section>
-
-
-    {/* Projects Section */}
+{/* Projects Section */}
     <section id="projects" className="projects mt-8 h-auto w-screen bg-[#161616] flex flex-col items-center">
         <h2 className="text-4xl font-bold leading-10 text-center text-[#1AB7FF]">Here are some of my projects:</h2>
         <div className=" inline-flex justify-center space-x-4 bg-[#161616] ">

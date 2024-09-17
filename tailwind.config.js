@@ -12,6 +12,8 @@ module.exports = {
           'sans': ['League Spartan', 'sans-serif'],
           'serif': ['Merriweather', 'serif'],
           'mono': ['Inconsolata', 'monospace'],
+          'inter': ['Inter', 'sans-serif'], 
+          'monsterrat': ['Montserrat', 'sans-serif'], 
         },
         backgroundImage:{
           'about-section': "url('/pubic/imgs/gradient.png')",

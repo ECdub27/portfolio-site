@@ -6,7 +6,7 @@ import { FaAddressCard, FaExclamation, FaHome, FaScrewdriver } from "react-icons
 const MainNav: React.FC = () => {       
 
 return (
-<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-[#212121]-200 bg-[#267FF3] sm:block'>
+<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-[#212121]-200 bg-[#267FF3] sm:block mb-5'>
   <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
  {/* logo here */}
  <button data-collapse-toggle="navbar-default"
