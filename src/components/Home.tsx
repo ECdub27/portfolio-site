@@ -98,7 +98,7 @@ const Home = () => (
 </section>
 
 {/* About Section */}
-<section id="about" className="h-autos flex flex-col p-8 w-full bg-[#f0f4f8]">
+<section id="about" className="h-autos flex flex-col p-8 w-full bg-[#f0f4f8] bg-about-section bg-cover bg-center h-screen">
 
   <div className='h-[104px] px-10 py-4 bg-[#292f36] rounded-tl-[40px] rounded-br-[40px] border-4 border-[#12f7d6] justify-start items-start inline-flex"'>
   <h2 className="mx-auto text-2xl justify-center items-center font-bold">About Me</h2>
