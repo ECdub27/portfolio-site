@@ -12,6 +12,10 @@ module.exports = {
           'sans': ['League Spartan', 'sans-serif'],
           'serif': ['Merriweather', 'serif'],
           'mono': ['Inconsolata', 'monospace'],
+        },
+        backgroundImage:{
+          'about-section': "url('/pubic/imgs/gradient.png')",
+          'footer-texture': "url('/src/assets/footer-texture.svg')",
         }
       }
     },

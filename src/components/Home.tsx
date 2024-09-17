@@ -5,40 +5,78 @@ import groupChatGen from '../../public/imgs/GroupChatNameGen.png';
 import Liverpool from '../../public/imgs/Liverpoolshield.jpg';
 import ProjectCard from './projectCard';  
 import ContactForm from './contactForm';
+import Technologies from './technologies';
+import { FaAddressCard, FaExclamation, FaHome, FaScrewdriver } from 'react-icons/fa';
+import MainNav from './mainNav';
 
 // palette colors 1AB7FF -blue bright chartruese - 2CF000 202827
 const Home = () => (
   <div className="Home  bg-[#f0f4f8]">
   
   {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
-<nav className='fixed start-0 top-0 z-20 hidden w-full border-b border-[#212121]-200 bg-[#267FF3] sm:block'>
-  <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
- {/* logo here */}
- <button data-collapse-toggle="navbar-default"
-type="button"
-className='inline-flex- h-10 w-10 items-center bg-[#white] justify-center rounded-lg p-2 text-sm text-gray hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black-200 md:hidden'>
-  <span className='sr-only'>Menu</span>
-</button>
-<div className='hidden w-full md:block md:w-auto' id="navbar-default">
- <ul className='mt-4 flex flex-col rounded-lg border border-red-500 bg-[#1AB7FF]-50 p-4 font-medium md:mt:0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse'>
-    <li className="bg-[#267FF3]">
-      <a href='#home' className='text-white'>Home</a>
-    </li>
-    <li className="bg-[#267FF3]">
-      <a className='text-white'  href='#about'>About</a>
-    </li>
-    <li className="bg-[#267FF3]">
-      <a className='text-white' href='#projects'>Projects</a>
-    </li>
-    <li className="bg-[#267FF3]">
-      <a className='text-white' href='#contact'>Contact</a>
-    </li>
-  </ul>
-  </div>
-  </div>
-</nav>
+<MainNav /> 
 
-
+<div className="w-80 h-[520px] p-6 bg-[#292f36] rounded-tl-full rounded-br-full shadow border-4 border-white flex-col justify-center items-start gap-8 inline-flex">
+    <div className="flex-col justify-start items-center gap-8 flex">
+        <div className="flex-col justify-start items-center gap-4 flex">
+            <img className="rounded-[64px] border-2 border-[#12f7d6]" src="https://via.placeholder.com/96x96" />
+            <div className="flex-col justify-start items-center flex">
+                <div className="text-white text-[32px] font-medium font-['IBM Plex Mono'] capitalize leading-[42px]">EC WIegand</div>
+                <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Full-Stack developer</div>
+            </div>
+        </div>
+        <div className="flex-col justify-start items-start gap-4 flex">
+            <div className="flex-col justify-start items-start gap-4 flex">
+                <div className="justify-center items-center gap-4 inline-flex">
+                    <div className="w-3.5 h-3.5 justify-center items-center flex">
+                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
+                    </div>
+                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">ecdevdub27@outlook.com</div>
+                </div>
+                <div className="justify-center items-center gap-4 inline-flex">
+                    <div className="w-3.5 h-3.5 justify-center items-center flex">
+                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
+                    </div>
+                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">LI, NY</div>
+                </div>
+                <div className="justify-center items-center gap-4 inline-flex">
+                    <div className="w-3.5 h-3.5 justify-center items-center flex">
+                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
+                    </div>
+                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Full-time Developer</div>
+                </div>
+                <div className="justify-center items-center gap-4 inline-flex">
+                    <div className="w-3.5 h-3.5 justify-center items-center flex">
+                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
+                    </div>
+                    <div className="text-white text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Twitter</div>
+                </div>
+            </div>
+            <div className="justify-start items-start gap-4 inline-flex">
+                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
+                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">NextJs</div>
+                </div>
+                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
+                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">.NET</div>
+                </div>
+                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
+                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">PostgreSQL</div>
+                </div>
+                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
+                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Docker</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div className="flex-col justify-start items-center flex">
+        <div className="px-8 py-4 bg-white rounded-[32px] justify-center items-center gap-4 inline-flex">
+            <div className="text-[#292f36] text-xl font-normal font-['Ubuntu'] capitalize leading-normal">Download CV</div>
+            <div className="w-6 h-6 justify-center items-center flex">
+                <div className="w-6 h-6 relative flex-col justify-start items-start flex" />
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {/* Hero Section */}
@@ -60,29 +98,26 @@ className='inline-flex- h-10 w-10 items-center bg-[#white] justify-center rounde
 </section>
 
 {/* About Section */}
-<section id="about" className="h-auto mt-12 flex flex-col p-8 w-full bg-[#f0f4f8]">
+<section id="about" className="h-autos flex flex-col p-8 w-full bg-[#f0f4f8]">
+
+  <div className='h-[104px] px-10 py-4 bg-[#292f36] rounded-tl-[40px] rounded-br-[40px] border-4 border-[#12f7d6] justify-start items-start inline-flex"'>
   <h2 className="mx-auto text-2xl justify-center items-center font-bold">About Me</h2>
 
-  <p className='flex-col mt-5 font-league-spartan text-xl text-pretty leading-7 px-5'>
+  </div>
+  <div className='h-auto px-10 py-6 bg-[#292f36] rounded-[40px] flex-col justify-start items-start gap-4'>
+    {/* add like styled spans of name in a cool way */}
+  <div className='flex-col mt-5 font-league-spartan text-xl text-white text-pretty leading-7 px-5'>
+    <p>
     I am a Full-Stack Developer, from NY! I am just a tech geek, who has some experience in the field of web development. 
     I bring a refreshing perspective to projects that epitomizes satisfied clients and the Organization. 
     I am a believer, that sometimes "Haste is Waste" and sometimes Less is More. 
     Projects and people develop overtime, this portfolio is a living document please check back to see anything new that I am working on!
-  </p>
-  <div className="flex flex-col mt-5 font-league-spartan text-xl text-pretty leading-7 px-5">
-    <p>Here are some of the technologies I have experience with:</p>
-    <ul className="list-disc list-inside">
-      <li>React Frameworks(React, Vite, NextJs)</li>
-      <li>PostgreSQL</li>
-      <li>JavaScript</li>
-      <li>Microsoft SQL Server Management Studio (SSMS)</li>
-      <li>Node.js</li>
-      <li>Express</li>
-      <li>PostgreSQL</li>
-      <li>Git</li>
-      <li>.NET</li>
-    </ul> 
-    </div>
+    </p>
+  </div>
+ <Technologies /> 
+  </div>
+
+    
 </section>
 
 
