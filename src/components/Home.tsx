@@ -6,9 +6,10 @@ import Liverpool from '../../public/imgs/Liverpoolshield.jpg';
 import ProjectCard from './projectCard';  
 import ContactForm from './contactForm';
 import Technologies from './technologies';
-import fam from '../../public/imgs/family.png';
+import BioBadge from './bioBage';
 import { FaAddressCard, FaExclamation, FaHome, FaScrewdriver } from 'react-icons/fa';
 import MainNav from './mainNav';
+import MainSection from './MainSection';
 
 // palette colors 1AB7FF -blue bright chartruese - 2CF000 202827
 const Home = () => (
@@ -16,69 +17,7 @@ const Home = () => (
   
   {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
 <MainNav /> 
-<div  className='bg-[#267FF3]'>
-<div className=" mt-5 w-80 h-[520px] z-30 p-6 bg-[#292f36] rounded-tl-full rounded-br-full shadow border-4 border-black flex-col justify-center items-start gap-8 inline-flex">
-    <div className="flex-col justify-start items-center gap-8 flex">
-        <div className="flex-col justify-start items-center gap-4 flex">
-            <img className="rounded-[64px] border-2 border-[#E0607E]" src={fam} />
-            <div className="flex-col justify-start items-center flex">
-                <div className="text-white text-[32px] font-medium font-inter capitalize leading-[42px]">EC Wiegand</div>
-                <div className="text-white text-sm font-normal font-inter leading-[18px]">Full Stack developer</div>
-            </div>
-        </div>
-        <div className="flex-col justify-start items-start gap-4 flex">
-            <div className="flex-col justify-start items-start gap-4 flex">
-                <div className="justify-center items-center gap-4 inline-flex">
-                    <div className="w-3.5 h-3.5 justify-center items-center flex">
-                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
-                    </div>
-                    <div className="text-white text-sm font-normal font-sans leading-[18px]">ecdevdub27@outlook.com</div>
-                </div>
-                <div className="justify-center items-center gap-4 inline-flex">
-                    <div className="w-3.5 h-3.5 justify-center items-center flex">
-                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
-                    </div>
-                    <div className="text-white text-sm font-normal font-sans leading-[18px]">LI, NY</div>
-                </div>
-                <div className="justify-center items-center gap-4 inline-flex">
-                    <div className="w-3.5 h-3.5 justify-center items-center flex">
-                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
-                    </div>
-                    <div className="text-white text-sm font-normal font-sans leading-[18px]">Full-time Developer</div>
-                </div>
-                <div className="justify-center items-center gap-4 inline-flex">
-                    <div className="w-3.5 h-3.5 justify-center items-center flex">
-                        <div className="w-3.5 h-3.5 relative flex-col justify-start items-start flex" />
-                    </div>
-                    <div className="text-white text-sm font-normal font-sans leading-[18px]">Twitter</div>
-                </div>
-            </div>
-            <div className="justify-start items-start gap-4 inline-flex">
-                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
-                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">NextJs</div>
-                </div>
-                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
-                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">.NET</div>
-                </div>
-                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
-                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">PostgreSQL</div>
-                </div>
-                <div className="px-2 bg-[#12f7d6] rounded-lg justify-center items-center gap-4 flex">
-                    <div className="text-[#292f36] text-sm font-normal font-['IBM Plex Mono'] leading-[18px]">Docker</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className="flex-col justify-start items-center flex">
-        <div className="px-8 py-4 bg-white rounded-[32px] justify-center items-center gap-4 inline-flex">
-            <div className="text-[#292f36] text-xl font-normal font-['Ubuntu'] capitalize leading-normal">Download CV</div>
-            <div className="w-6 h-6 justify-center items-center flex">
-                <div className="w-6 h-6 relative flex-col justify-start items-start flex" />
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+<BioBadge />  
 
 {/* Hero Section */}
 <section className="flex flex-col md:flex-row bg-[#161616] justify-center items-center h-screen relative">
@@ -99,9 +38,8 @@ const Home = () => (
 </section>
 
 {/* About Section */}
-<section id="about" className="h-auto mt-4  flex flex-col p-8 w-full  bg-about-section bg-cover bg-center">
-
-  <div className='h-[104px] px-10 py-4 bg-[#292f36] rounded-tl-[40px] rounded-br-[40px] border-4 border-[#E0607E] justify-start items-start inline-flex"'>
+<MainSection title="About Me" altBackground>
+<div id='bio' className='h-[104px] px-10 py-4 bg-[#292f36] rounded-tl-[40px] rounded-br-[40px] border-4 border-[#E0607E] justify-start items-start inline-flex"'>
   <h2 className="mx-auto text-2xl justify-center text-white font-inter items-center font-bold mb-2">About Me</h2>
 
   </div>
@@ -121,25 +59,23 @@ const Home = () => (
   </div>
  <Technologies /> 
   </div>
-</section>
-{/* Projects Section */}
-    <section id="projects" className="projects mt-8 h-auto w-screen bg-[#161616] flex flex-col items-center">
-        <h2 className="text-4xl font-bold leading-10 text-center text-[#1AB7FF]">Here are some of my projects:</h2>
+  </MainSection>
+<MainSection title="Projects" altBackground={true} >
         <div className=" inline-flex justify-center space-x-4 bg-[#161616] ">
-          <ProjectCard title="Liverpool FC" description="A project to show my love for the Reds! Click the image to see more!" image={Liverpool} link="https://psychedelic-observation-production.up.railway.app/" />
+          <ProjectCard title="RecipeFinder" description="Cheers! To never wasting money on spoiled food again!" image={Liverpool} link="https://psychedelic-observation-production.up.railway.app/" />
           <ProjectCard title="Group Chat Name Generator" description="Group Chat generator with a fun lottie file" image={groupChatGen} link="https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/" />
           <ProjectCard title="Refreshed News" description="A new Refreshing feel to a News website" image={refreshedNews} link="https://vite-refreshed-news-kscixfsrp-ecdub27s-projects.vercel.app/#main" />
         </div>
-      </section>
+  </MainSection>
+<MainSection title="Contact" altBackground={true}>
 
-    {/* Contact Section */}
-    <section id="contact" className="contact h-auto w-screen bg-[#161616] flex flex-col items-center">
-  
-  <div className="w-full max-w-2xl">
-    <ContactForm />
-  </div>
-</section>
-  </div>
+<div className='bg-black w-full'>
+
+<ContactForm />
+</div>
+ 
+  </MainSection>
+</div>
 
  
   

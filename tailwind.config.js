@@ -18,7 +18,20 @@ module.exports = {
         backgroundImage:{
           'about-section': "url('/pubic/imgs/gradient.png')",
           'footer-texture': "url('/src/assets/footer-texture.svg')",
-        }
+        },
+        padding:{
+          section: '16px',
+        },
+        maxWidth:{
+          'container': '1200px',
+        },
+        colors:{
+          'primary': '#FF6363',
+          'secondary': {
+            100: '#E2E2D5',
+            200: '#888883',
+          },
+        },  
       }
     },
   },
