@@ -14,6 +14,7 @@ import {
 import MainNav from "./mainNav";
 import MainSection from "./MainSection";
 import ContactSection from "./contact";
+import Footer from "./footer";
 
 // palette colors 1AB7FF -blue bright chartruese - 2CF000 202827
 const Home = () => (
@@ -94,8 +95,11 @@ const Home = () => (
         />
       </div>
     </MainSection>
-    <MainSection title="" altBackground={true}>
+
+
+    <MainSection title=''>
       <ContactSection />
+      <Footer />
     </MainSection>
   </div>
 );

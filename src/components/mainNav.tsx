@@ -1,10 +1,10 @@
 import React from "react";
 import {
   FaAddressCard,
-  FaExclamation,
   FaHome,
   FaScrewdriver,
 } from "react-icons/fa";
+import { FaAddressBook } from "react-icons/fa6";
 import BioBadge from "./bioBage";
 
 const MainNav: React.FC = () => {
@@ -42,7 +42,7 @@ const MainNav: React.FC = () => {
             </li>
             <li className="bg-[#267FF3]">
               <a className="text-white flex items-center" href="#contact-me">
-                <FaExclamation className="text-black mr-2" />
+                <FaAddressBook className="text-black mr-2" />
                 Contact
               </a>
             </li>
