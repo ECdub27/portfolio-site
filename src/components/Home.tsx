@@ -58,6 +58,7 @@ const Home = () => (
             some experience in the field of web development. I bring a
             refreshing perspective to projects that epitomizes satisfied clients
             and the Organization.
+            <br /> Recently, I have been working as a Guidewire configuration developer for my current employer. I have been working on a project that involves the development of a new policy center for a client. I have been working on the project for the past 6 months and have been able to learn a lot about the Guidewire platform and how to configure it to meet the needs of the client.
             <br />I am a believer, that sometimes "Haste is Waste" and sometimes
             Less is More. Projects and people develop overtime, this portfolio
             is a living document please check back to see anything new that I am
