@@ -80,7 +80,7 @@ const Home = () => (
           title="RecipeFinder"
           description="Cheers! To never wasting money on spoiled food again!"
           image={recipeFinder}
-          link="https://psychedelic-observation-production.up.railway.app/"
+          link="https://recipedia-six.vercel.app/"
         />
         <ProjectCard
           title="Group Chat Name Generator"
