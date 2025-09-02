@@ -32,7 +32,7 @@ const Home = () => (
           Elijah-Christian
         </div>
         <div className="text-white text-xl md:text-3xl lg:text-5xl font-normal font-['League Spartan']">
-          A Passionate Software Developer
+          Full-Stack Developer — enterprise roots, modern web focus
         </div>
       </div>
       <div className="order-1 md:order-2 mt-8 md:mt-0 lg:ml-16">
@@ -54,23 +54,26 @@ const Home = () => (
         {/* add like styled spans of name in a cool way */}
         <div className="flex-col mt-2 font-league-spartan text-xl text-white text-pretty leading-7 px-5 border-[#E0607E] shadow-lg h-auto ">
           <p className=" hover:focus text-lg ">
-            I am a Full-Stack Developer, from NY! I am just a tech geek, who has
-            some experience in the field of web development. I bring a
-            refreshing perspective to projects that epitomizes satisfied clients
-            and the Organization.
-            <br /> Recently, I have been working as a Guidewire configuration developer for my current employer. I have been working on a project that involves the development of a new policy center for a client. I have been working on the project for the past 6 months and have been able to learn a lot about the Guidewire platform and how to configure it to meet the needs of the client.
-            <br />I am a believer, that sometimes "Haste is Waste" and sometimes
-            Less is More. Projects and people develop overtime, this portfolio
-            is a living document please check back to see anything new that I am
-            working on!
+            I’m Elijah-Christian Wiegand, a Full-Stack Developer from New York.
+            By day I configure and extend Guidewire for complex policy workflows
+            in enterprise insurance. By night I build clean, scalable apps with
+            .NET, Next.js, and friends.
+            <br />
+            My sweet spot is bridging <strong>legacy enterprise systems</strong>{" "}
+            with <strong>modern engineering practices</strong>—untangling brittle
+            logic, improving reliability, and shipping user-friendly features.
+            <br />
+            I believe “haste makes waste,” and that less can be more. This
+            portfolio is a living document—check back for what I’m shipping next.
           </p>
           <p className=" hover:focus text-lg">
-            Here are some other of the various technologies I use!
+            Here are some of the technologies I work with:
           </p>
         </div>
         <Technologies />
       </div>
     </MainSection>
+
     <MainSection title="Projects" altBackground={true}>
       <div
         id="project-section"
@@ -78,25 +81,24 @@ const Home = () => (
       >
         <ProjectCard
           title="RecipeFinder"
-          description="Cheers! To never wasting money on spoiled food again!"
+          description="Turn leftover ingredients into dinner—save money, reduce waste."
           image={recipeFinder}
           link="https://recipedia-six.vercel.app/"
         />
         <ProjectCard
           title="Group Chat Name Generator"
-          description="Group Chat generator with a fun lottie file"
+          description="Generate fun, memorable names—plus a playful Lottie animation."
           image={groupChatGen}
           link="https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/"
         />
         <ProjectCard
           title="Refreshed News"
-          description="A new Refreshing feel to a News website"
+          description="A clean, fast news experience with a refreshed, modern feel."
           image={refreshedNews}
           link="https://vite-refreshed-news.vercel.app/"
         />
       </div>
     </MainSection>
-
 
     <MainSection title=''>
       <ContactSection />
