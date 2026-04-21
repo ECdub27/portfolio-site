@@ -19,8 +19,9 @@ const BioBadge = () => {
                     <div className="flex-col justify-start items-center gap-4 flex">
                         <img className="rounded-[64px] border-2 border-[#E0607E]" src={fam} />
                         <div className="flex-col justify-start items-center flex">
+                            <div className="text-[#12f7d6] text-xs font-mono uppercase tracking-widest mb-1">Parsec Logic Dev Solutions</div>
                             <div className="text-white text-[32px] font-medium font-inter capitalize leading-[42px]">EC Wiegand</div>
-                            <div className="text-white text-sm font-normal font-inter leading-[18px]">Full Stack developer</div>
+                            <div className="text-white text-sm font-normal font-inter leading-[18px]">Independent Software Contractor</div>
                         </div>
                     </div>
                     <div className="flex-col justify-start items-start gap-4 flex">

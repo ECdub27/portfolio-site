@@ -25,14 +25,14 @@ const Footer = () => {
                         <FaGithub size={30} />
                     </a>
                     <a
-                        href="mailto:ewiegand51@gmail.com"
+                        href="mailto:contact@parselogic.it.com"
                         className="text-white hover:text-green-500"
                     >
                         <FaEnvelope size={30} />
                     </a>
                 </div>
                 <p className="text-sm">
-                    &copy; {new Date().getFullYear()} Elijah-Christian Wiegand. All rights reserved.
+                    &copy; {new Date().getFullYear()} Parsec Logic Dev Solutions &middot; EC Wiegand. All rights reserved.
                 </p>
             </div>
         </footer>

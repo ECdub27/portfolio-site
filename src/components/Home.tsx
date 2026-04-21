@@ -32,7 +32,7 @@ const Home = () => (
           Elijah-Christian
         </div>
         <div className="text-white text-xl md:text-3xl lg:text-5xl font-normal font-['League Spartan']">
-          Full-Stack Developer — enterprise roots, modern web focus
+          Independent Software Contractor — enterprise roots, modern web focus
         </div>
       </div>
       <div className="order-1 md:order-2 mt-8 md:mt-0 lg:ml-16">
@@ -59,12 +59,15 @@ const Home = () => (
             in enterprise insurance. By night I build clean, scalable apps with
             .NET, Next.js, and friends.
             <br />
-            My sweet spot is bridging <strong>legacy enterprise systems</strong>{" "}
+            My sweet spot is bridging <strong>legacy enterprise systems <br />
+            </strong>
             with <strong>modern engineering practices</strong>—untangling brittle
             logic, improving reliability, and shipping user-friendly features.
             <br />
             I believe “haste makes waste,” and that less can be more. This
             portfolio is a living document—check back for what I’m shipping next.
+            I’m available for contract engagements through
+            <strong> <br /> Parsec Logic Dev Solutions</strong>.
           </p>
           <p className=" hover:focus text-lg">
             Here are some of the technologies I work with:
@@ -77,26 +80,45 @@ const Home = () => (
     <MainSection title="Projects" altBackground={true}>
       <div
         id="project-section"
-        className=" inline-flex justify-center space-x-4 bg-[#161616] "
+        className="flex flex-wrap justify-center gap-4 w-full bg-[#161616]"
       >
         <ProjectCard
           title="RecipeFinder"
           description="Turn leftover ingredients into dinner—save money, reduce waste."
           image={recipeFinder}
           link="https://recipedia-six.vercel.app/"
+          inProgress
         />
         <ProjectCard
           title="Group Chat Name Generator"
           description="Generate fun, memorable names—plus a playful Lottie animation."
           image={groupChatGen}
           link="https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/"
+          inProgress
         />
         <ProjectCard
           title="Refreshed News"
           description="A clean, fast news experience with a refreshed, modern feel."
           image={refreshedNews}
           link="https://vite-refreshed-news.vercel.app/"
+          inProgress
         />
+      </div>
+    </MainSection>
+
+    <MainSection title="Services">
+      <div className="w-full max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 pb-4">
+        {[
+          { label: "Custom Web Development", detail: "Full-stack apps — React, Node.js, .NET, Java" },
+          { label: "System Integration", detail: "APIs, legacy bridges, Guidewire / enterprise platforms" },
+          { label: "Shopify & Platform Work", detail: "Custom storefronts, theme dev, headless builds" },
+          { label: "Technical Consulting", detail: "Architecture reviews, tech strategy, small business web" },
+        ].map(({ label, detail }) => (
+          <div key={label} className="bg-[#292f36] rounded-2xl p-6 text-left shadow-md">
+            <div className="text-[#12f7d6] font-mono text-sm font-semibold mb-1">{label}</div>
+            <div className="text-white text-sm opacity-75">{detail}</div>
+          </div>
+        ))}
       </div>
     </MainSection>
 

@@ -4,21 +4,21 @@ import MainSection from "./MainSection";
 
 const ContactSection = () => {
     return (
-        <MainSection title="Wanna Reach Out?" altBackground={true}>
+        <MainSection title="Start a Project" altBackground={true}>
             <div className="bg-gradient-to-r from-blue-500 to-green-500 p-10 rounded-lg shadow-lg w-full">
                 <h2
                     id="contact-me"
                     className="text-4xl font-bold leading-10 text-center text-white"
                 >
-                    Contact Me:
+                    Work With Me
                 </h2>
                 <p className="text-center mt-4 text-xl text-white">
-                    I am always open to discussing new opportunities. Feel free to reach out to me!
+                    Have a project in mind? I take on contract engagements through Parsec Logic Dev Solutions — let's talk scope and timeline.
                 </p>
                 <div className="flex justify-center mt-4 space-x-2">
                     <a
-                        href="mailto:ewiegand51@gmail.com?subject=Job%20Opportunity&body=Hi%20Elijah-Christian,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20a%20job%20opportunity%20with%20you.%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]"
-                        className="bg-[#2CF000] h-[70px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center transition-transform transform hover:scale-105"
+                        href="mailto:contact@parselogic.it.com?subject=Project%20Inquiry%20via%20PLDS&body=Hi%20EC,%0D%0A%0D%0AI%27d%20like%20to%20discuss%20a%20project%20engagement.%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]"
+                        className="bg-[#267FF3] h-[70px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center transition-transform transform hover:scale-105"
                     >
                         <FaEnvelope className="mr-2" /> Email Me
                     </a>
@@ -74,7 +74,7 @@ const ContactSection = () => {
                         ></textarea>
                     </div>
                     <button
-                        className="bg-[#2CF000] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-transform transform hover:scale-105"
+                        className="bg-[#267FF3] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-transform transform hover:scale-105"
                         type="submit"
                     >
                         Send Message

@@ -5,21 +5,15 @@ import {
   FaScrewdriver,
 } from "react-icons/fa";
 import { FaAddressBook } from "react-icons/fa6";
-import BioBadge from "./bioBage";
 
 const MainNav: React.FC = () => {
   return (
-    <nav className="static start-0 top-0 hidden w-full border-b border-[#212121]-200 bg-[#267FF3] sm:block mb-5">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        {/* logo here */}
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="inline-flex- h-10 w-10 items-center bg-[#white] justify-center rounded-lg p-2 text-sm text-gray hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black-200 md:hidden"
-        >
-          <span className="sr-only">Menu</span>
-        </button>
-        <BioBadge />
+    <nav className="sticky top-0 z-50 w-full border-b border-[#1a1a1a] bg-[#267FF3] sm:block">
+      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-6 py-3">
+        <a href="#home" className="flex flex-col leading-tight">
+          <span className="text-[#12f7d6] text-[10px] font-mono uppercase tracking-widest">Parsec Logic Dev Solutions</span>
+          <span className="text-white text-lg font-semibold font-inter">EC Wiegand</span>
+        </a>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="mt-4 flex flex-col rounded-lg border border-red-500 bg-[#1AB7FF]-50 p-4 font-medium md:mt:0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse">
             <li className="bg-[#267FF3]">
