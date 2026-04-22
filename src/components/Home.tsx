@@ -49,7 +49,7 @@ const Home = () => (
     <MainSection title="About Me" altBackground>
       <div
         id="about-section"
-        className="h-auto px-10 py-6 bg-[#292f36] rounded-[40px] flex-col justify-start items-start gap-4"
+        className="scroll-mt-16 h-auto px-10 py-6 bg-[#292f36] rounded-[40px] flex-col justify-start items-start gap-4"
       >
         {/* add like styled spans of name in a cool way */}
         <div className="flex-col mt-2 font-league-spartan text-xl text-white text-pretty leading-7 px-5 border-[#E0607E] shadow-lg h-auto ">
@@ -80,7 +80,7 @@ const Home = () => (
     <MainSection title="Projects" altBackground={true}>
       <div
         id="project-section"
-        className="flex flex-wrap justify-center gap-4 w-full bg-[#161616]"
+        className="scroll-mt-16 flex flex-wrap justify-center gap-4 w-full bg-[#161616]"
       >
         <ProjectCard
           title="RecipeFinder"

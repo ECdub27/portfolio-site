@@ -8,7 +8,7 @@ const ContactSection = () => {
             <div className="bg-gradient-to-r from-blue-500 to-green-500 p-10 rounded-lg shadow-lg w-full">
                 <h2
                     id="contact-me"
-                    className="text-4xl font-bold leading-10 text-center text-white"
+                    className="scroll-mt-16 text-4xl font-bold leading-10 text-center text-white"
                 >
                     Work With Me
                 </h2>
