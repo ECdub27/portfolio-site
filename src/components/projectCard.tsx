@@ -1,36 +1,64 @@
 import React from 'react';
 
-interface ProjectCardProps {
+export interface Project {
   title: string;
   description: string;
   image: string;
   link: string;
-  inProgress?: boolean;
+  technologies: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link, inProgress = false }) => {
-  return (
-    <div className="max-w-sm md:max-w-md lg:max-w-lg rounded  shadow-lg justify-between bg-[#1AB7FF] mx-auto my-4">
-      <div className="aspect-w-16 aspect-h-9">
-        <img className="w-full h-full object-cover" src={image} alt={title} />
+interface ProjectCardProps extends Project {
+  reverse?: boolean;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  description,
+  image,
+  link,
+  technologies,
+  reverse = false,
+}) => (
+  <article
+    className={`flex flex-col ${
+      reverse ? 'md:flex-row-reverse' : 'md:flex-row'
+    } items-center gap-8 md:gap-9`}
+  >
+    <img
+      src={image}
+      alt={title}
+      className="w-full max-w-sm md:w-96 md:h-96 aspect-square object-cover rounded-[40px] flex-shrink-0"
+    />
+    <div className="flex-1 flex flex-col items-start gap-6 md:gap-8 w-full md:max-w-[776px]">
+      <h3 className="text-gray-900 text-3xl md:text-4xl font-semibold capitalize leading-tight">
+        {title}
+      </h3>
+      <div className="w-8 h-px bg-gray-900" />
+      <p className="text-zinc-600 text-base md:text-lg font-normal leading-7">
+        {description}
+      </p>
+      <div className="flex flex-col items-start gap-2">
+        <span className="text-blue-600 text-sm md:text-lg font-semibold uppercase tracking-widest leading-7">
+          Technologies Used
+        </span>
+        <span className="text-zinc-600 text-base md:text-lg font-normal leading-7">
+          {technologies}
+        </span>
       </div>
-      <div className="px-4 py-2 md:px-6 md:py-4">
-        <div className="font-semibold text-lg md:text-xl mb-2 text-[#202827]">{title}</div>
-        <p className="text-white-700 text-sm md:text-base font-normal leading-6 text-[#202827]">{description}</p>
-      </div>
-      <div className="px-4 py-2 md:px-6 md:py-4">
-        {inProgress ? (
-          <span className="bg-[#292f36] text-[#12f7d6] font-mono text-sm font-semibold py-2 px-4 rounded block text-center cursor-not-allowed opacity-80">
-            🚧 In progress · Metamonolith Project
-          </span>
-        ) : (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="bg-[#267FF3] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center">
-            View Project
-          </a>
-        )}
-      </div>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center gap-2 w-44 group"
+      >
+        <span className="text-center text-gray-900 text-lg md:text-xl font-semibold uppercase leading-7 tracking-widest group-hover:text-blue-600 transition-colors">
+          See Project
+        </span>
+        <span className="w-44 h-[3px] bg-blue-600" />
+      </a>
     </div>
-  );
-};
+  </article>
+);
 
 export default ProjectCard;

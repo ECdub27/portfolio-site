@@ -1,88 +1,160 @@
-import React from "react";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import MainSection from "./MainSection";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const ContactSection = () => {
-    return (
-        <MainSection title="Start a Project" altBackground={true}>
-            <div className="bg-gradient-to-r from-blue-500 to-green-500 p-10 rounded-lg shadow-lg w-full">
-                <h2
-                    id="contact-me"
-                    className="scroll-mt-16 text-4xl font-bold leading-10 text-center text-white"
-                >
-                    Work With Me
-                </h2>
-                <p className="text-center mt-4 text-xl text-white">
-                    Have a project in mind? I take on contract engagements through Parsec Logic Dev Solutions — let's talk scope and timeline.
-                </p>
-                <div className="flex justify-center mt-4 space-x-2">
-                    <a
-                        href="mailto:contact@parselogic.it.com?subject=Project%20Inquiry%20via%20PLDS&body=Hi%20EC,%0D%0A%0D%0AI%27d%20like%20to%20discuss%20a%20project%20engagement.%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]"
-                        className="bg-[#267FF3] h-[70px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center transition-transform transform hover:scale-105"
-                    >
-                        <FaEnvelope className="mr-2" /> Email Me
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/elijah-christian-wiegand-2b59a898/"
-                        className="bg-[#0077B5] h-[70px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center transition-transform transform hover:scale-105"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <FaLinkedin className="mr-2" /> LinkedIn
-                    </a>
-                    <a
-                        href="https://github.com/ECdub27"
-                        className="bg-[#333] h-[70px] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center transition-transform transform hover:scale-105"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <FaGithub className="mr-2" /> GitHub
-                    </a>
-                </div>
-                <form className="mt-8 max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-                            Name
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="name"
-                            type="text"
-                            placeholder="Your Name"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                            Email
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="email"
-                            type="email"
-                            placeholder="Your Email"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-                            Message
-                        </label>
-                        <textarea
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="message"
-                            placeholder="Your Message"
-                            rows={4}
-                        ></textarea>
-                    </div>
-                    <button
-                        className="bg-[#267FF3] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-transform transform hover:scale-105"
-                        type="submit"
-                    >
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </MainSection>
-    );
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+
+const buttons = [
+  {
+    label: 'Email',
+    href:
+      'mailto:contact@parselogic.it.com?subject=Project%20Inquiry%20via%20PLDS&body=Hi%20EC,%0D%0A%0D%0AI%27d%20like%20to%20discuss%20a%20project%20engagement.%0D%0A%0D%0ARegards,%0D%0A%5BYour%20Name%5D',
+    Icon: FaEnvelope,
+    external: false,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/elijah-christian-wiegand-2b59a898/',
+    Icon: FaLinkedin,
+    external: true,
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/ECdub27',
+    Icon: FaGithub,
+    external: true,
+  },
+];
+
+const ContactSection: React.FC = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  const canSendViaEmailjs =
+    !!EMAILJS_SERVICE_ID && !!EMAILJS_TEMPLATE_ID && !!EMAILJS_PUBLIC_KEY;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    if (!canSendViaEmailjs) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID!,
+        EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        { publicKey: EMAILJS_PUBLIC_KEY! }
+      );
+      setStatus('sent');
+      formRef.current.reset();
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <section
+      id="contact"
+      className="scroll-mt-24 relative w-full bg-zinc-800 rounded-t-[60px] md:rounded-t-[100px] overflow-hidden"
+    >
+      <div className="relative z-10 mx-auto max-w-container px-6 md:px-[120px] py-16 md:py-20 flex flex-col items-center gap-6">
+        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
+          Work with me
+        </h2>
+        <div className="w-8 h-px bg-white" />
+        <p className="max-w-2xl text-center text-white text-base md:text-lg font-normal leading-7">
+          Have a project in mind? I take on contract engagements through Parsec
+          Logic Dev Solutions — let&apos;s talk scope and timeline.
+        </p>
+
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 w-full">
+          {buttons.map(({ label, href, Icon, external }) => (
+            <a
+              key={label}
+              href={href}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+              className="flex items-center justify-center gap-3 w-full sm:w-72 h-16 bg-stone-300 hover:bg-white rounded-[20px] text-black text-base md:text-lg font-medium transition-colors"
+            >
+              <Icon className="w-5 h-5" />
+              {label}
+            </a>
+          ))}
+        </div>
+
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="mt-6 w-full max-w-[998px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-10 flex flex-col gap-5 shadow-xl"
+        >
+          <div className="flex flex-col sm:flex-row gap-5">
+            <label className="flex-1 flex flex-col gap-2">
+              <span className="text-sm font-semibold text-gray-900 uppercase tracking-widest">
+                Name
+              </span>
+              <input
+                required
+                name="user_name"
+                type="text"
+                placeholder="Your name"
+                className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-gray-900 focus:border-blue-600 focus:outline-none"
+              />
+            </label>
+            <label className="flex-1 flex flex-col gap-2">
+              <span className="text-sm font-semibold text-gray-900 uppercase tracking-widest">
+                Email
+              </span>
+              <input
+                required
+                name="user_email"
+                type="email"
+                placeholder="you@example.com"
+                className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-gray-900 focus:border-blue-600 focus:outline-none"
+              />
+            </label>
+          </div>
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-semibold text-gray-900 uppercase tracking-widest">
+              Message
+            </span>
+            <textarea
+              required
+              name="message"
+              rows={5}
+              placeholder="Tell me about your project..."
+              className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-gray-900 focus:border-blue-600 focus:outline-none"
+            />
+          </label>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="self-start bg-gray-900 hover:bg-blue-600 disabled:opacity-60 text-white text-base md:text-lg font-semibold uppercase tracking-widest px-8 py-4 rounded-[20px] transition-colors"
+            >
+              {status === 'sending' ? 'Sending…' : 'Send Message'}
+            </button>
+            {status === 'sent' && (
+              <span className="text-green-600 text-sm font-medium">
+                Thanks — I&apos;ll be in touch soon.
+              </span>
+            )}
+            {status === 'error' && (
+              <span className="text-red-600 text-sm font-medium">
+                Something went wrong. Email me directly instead.
+              </span>
+            )}
+          </div>
+        </form>
+      </div>
+    </section>
+  );
 };
 
 export default ContactSection;

@@ -1,34 +1,67 @@
 import React from 'react';
-import { FaJava, FaDocker, FaGitAlt, FaDatabase, FaNodeJs } from 'react-icons/fa';
-import { SiTypescript } from 'react-icons/si';
-import reactFrameworks from '../../public/imgs/ReactFrameworks.png'
-import js from '/imgs/JS.png'
-import python from '/imgs/Python.png'
-import dotnet from '/imgs/dotnet.png'
+import {
+  FaReact,
+  FaJsSquare,
+  FaJava,
+  FaPython,
+  FaNodeJs,
+  FaDocker,
+  FaGitAlt,
+} from 'react-icons/fa';
+import { SiTypescript, SiDotnet, SiPostgresql } from 'react-icons/si';
 
-const TechItem = ({ icon, label }: { icon: React.ReactNode; label: string }) => (
-  <div className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 p-4 flex flex-col items-center">
-    {icon}
-    <p className="text-center text-white mt-2 text-sm">{label}</p>
+type Tech = { label: string; Icon: React.ComponentType<{ className?: string }> };
+
+const GuidewireMark: React.FC<{ className?: string }> = ({ className }) => (
+  <div
+    className={`${className ?? ''} flex items-center justify-center rounded-lg border-2 border-white`}
+  >
+    <span className="text-white font-mono text-[10px] font-bold leading-tight text-center">
+      Guide
+      <br />
+      wire
+    </span>
   </div>
 );
 
-const Technologies: React.FC = () => {
-  return (
-    <div className="flex flex-wrap font-sans justify-center mt-5 px-5">
-      <TechItem icon={<img src={reactFrameworks} className="h-12 w-12" alt="React" />} label="React" />
-      <TechItem icon={<img src={js} className="h-12 w-12" alt="JavaScript" />} label="JavaScript" />
-      <TechItem icon={<SiTypescript className="h-12 w-12 text-[#3178C6]" />} label="TypeScript" />
-      <TechItem icon={<FaJava className="h-12 w-12 text-[#f89820]" />} label="Java" />
-      <TechItem icon={<img src={python} className="h-12 w-12" alt="Python" />} label="Python" />
-      <TechItem icon={<img src={dotnet} className="h-12 w-12" alt=".NET" />} label=".NET" />
-      <TechItem icon={<FaNodeJs className="h-12 w-12 text-[#339933]" />} label="Node.js" />
-      <TechItem icon={<FaDocker className="h-12 w-12 text-[#2496ED]" />} label="Docker" />
-      <TechItem icon={<FaGitAlt className="h-12 w-12 text-[#F05032]" />} label="Git" />
-      <TechItem icon={<FaDatabase className="h-12 w-12 text-[#336791]" />} label="PostgreSQL" />
-      <TechItem icon={<div className="h-12 w-12 flex items-center justify-center bg-[#292f36] rounded-lg border border-[#12f7d6]"><span className="text-[#12f7d6] font-mono text-xs font-bold leading-tight text-center">Guide<br/>wire</span></div>} label="Guidewire" />
-    </div>
-  );
-};
+const techs: Tech[] = [
+  { label: 'React', Icon: FaReact },
+  { label: 'JavaScript', Icon: FaJsSquare },
+  { label: 'TypeScript', Icon: SiTypescript },
+  { label: 'Java', Icon: FaJava },
+  { label: 'Python', Icon: FaPython },
+  { label: '.NET', Icon: SiDotnet },
+  { label: 'Node.js', Icon: FaNodeJs },
+  { label: 'Docker', Icon: FaDocker },
+  { label: 'Git', Icon: FaGitAlt },
+  { label: 'PostgreSQL', Icon: SiPostgresql },
+  { label: 'Guidewire', Icon: GuidewireMark },
+];
 
-export default Technologies;    
+const Technologies: React.FC = () => (
+  <section className="w-full px-6 md:px-[120px] py-12 md:py-20">
+    <div className="mx-auto max-w-container bg-gray-900 rounded-[40px] md:rounded-[80px] px-6 sm:px-10 md:px-16 py-12 md:py-20">
+      <div className="flex flex-col items-center gap-6">
+        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
+          Technologies &amp; Expertise
+        </h2>
+        <div className="w-8 h-px bg-white" />
+      </div>
+      <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-6 gap-y-10 place-items-center">
+        {techs.map(({ label, Icon }) => (
+          <div
+            key={label}
+            className="flex flex-col items-center gap-4 w-20"
+          >
+            <Icon className="w-16 h-16 text-white" />
+            <span className="text-white text-sm sm:text-base md:text-lg font-medium capitalize text-center leading-tight">
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default Technologies;

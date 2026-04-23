@@ -1,131 +1,220 @@
-import Avatar from "@mui/material/Avatar";
-import propic from "/imgs/propic.png";
-import refreshedNews from "/imgs/refreshedNews.jpeg";
-import groupChatGen from "/imgs/GroupChatNameGen.png";
-import recipeFinder from "/imgs/recipeFinder.jpeg";
-import ProjectCard from "./projectCard";
-import Technologies from "./technologies";
+import React from 'react';
 import {
-  FaAddressCard,
-  FaExclamation,
-  FaHome,
-  FaScrewdriver,
-} from "react-icons/fa";
-import MainNav from "./mainNav";
-import MainSection from "./MainSection";
-import ContactSection from "./contact";
-import Footer from "./footer";
+  FaCode,
+  FaPlug,
+  FaShoppingBag,
+  FaChalkboardTeacher,
+} from 'react-icons/fa';
+import MainNav from './mainNav';
+import Technologies from './technologies';
+import ProjectCard, { Project } from './projectCard';
+import ContactSection from './contact';
+import Footer from './footer';
+import hero from '/imgs/hero.png';
+import recipeFinder from '/imgs/recipeFinder.jpeg';
+import groupChatGen from '/imgs/GroupChatNameGen.png';
+import refreshedNews from '/imgs/refreshedNews.jpeg';
 
-// palette colors 1AB7FF -blue bright chartruese - 2CF000 202827
-const Home = () => (
-  <div id="home" className="Home  bg-[#f0f4f8]">
-    {/* nav bar section uses the introduce my name with Elijah-Christian "EC" Wiegand  #212121'*/}
+const projects: Project[] = [
+  {
+    title: 'RecipeFinder',
+    description:
+      'At a loss for what to make for dinner? Use RecipeFinder to input a list of your leftover ingredients and see what you can make. Save money, reduce waste, and try something new!',
+    image: recipeFinder,
+    link: 'https://recipedia-six.vercel.app/',
+    technologies: 'React, Vite, Tailwind, Spoonacular API',
+  },
+  {
+    title: 'Group Chat Name Generator',
+    description:
+      'Generate fun, memorable group chat names — paired with a playful Lottie animation for instant delight.',
+    image: groupChatGen,
+    link: 'https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/',
+    technologies: 'React, Lottie, Netlify',
+  },
+  {
+    title: 'Refreshed News',
+    description:
+      'Get personalized news results with a refreshed, modern feel — built for clarity and speed.',
+    image: refreshedNews,
+    link: 'https://vite-refreshed-news.vercel.app/',
+    technologies: 'React, Vite, News API, Tailwind',
+  },
+];
+
+const services = [
+  {
+    label: 'Custom Web Development',
+    detail: 'Full-stack apps — React, Node.js, .NET, Java',
+    Icon: FaCode,
+  },
+  {
+    label: 'System Integration',
+    detail: 'APIs, legacy bridges, Guidewire / enterprise platforms',
+    Icon: FaPlug,
+  },
+  {
+    label: 'Shopify & Platform Work',
+    detail: 'Custom storefronts, theme dev, headless builds',
+    Icon: FaShoppingBag,
+  },
+  {
+    label: 'Technical Consulting',
+    detail: 'Architecture reviews, tech strategy, small business web',
+    Icon: FaChalkboardTeacher,
+  },
+];
+
+const Home: React.FC = () => (
+  <div id="home" className="bg-white">
     <MainNav />
 
-    {/* Hero Section */}
-    <section className="flex flex-col md:flex-row bg-[#161616] justify-center items-center h-screen relative">
-      <div className="order-2 md:order-1 flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:relative md:left-16 md:top-40 lg:left-24 lg:top-48 lg:space-y-8">
-        <div className="text-white text-4xl md:text-6xl lg:text-8xl font-normal font-['League Spartan']">
-          Hi, I&apos;m
+    {/* Hero */}
+    <section className="relative w-full bg-zinc-800 rounded-b-[60px] md:rounded-b-[100px] overflow-hidden">
+      <div className="relative z-10 mx-auto max-w-container px-6 md:px-[120px] py-16 md:py-24 flex flex-col-reverse md:flex-row items-center gap-10 md:gap-12">
+        <div className="flex flex-col items-start gap-6 md:gap-8 w-full md:max-w-[621px]">
+          <div className="flex flex-col">
+            <span className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold capitalize leading-none">
+              Hi, I&rsquo;m
+            </span>
+            <span className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold capitalize leading-tight mt-1">
+              Elijah-Christian.
+            </span>
+          </div>
+          <p className="text-white text-base md:text-xl font-semibold uppercase leading-7 tracking-widest">
+            Independent Software Contractor —
+            <br className="hidden sm:block" />
+            enterprise roots, modern web focus
+          </p>
+          <div className="w-8 h-px bg-white" />
+          <div className="flex flex-wrap gap-8 md:gap-12">
+            <a
+              href="#projects"
+              className="flex flex-col items-center gap-2 group"
+            >
+              <span className="text-center text-white text-lg md:text-xl font-semibold uppercase leading-7 tracking-widest">
+                Projects
+              </span>
+              <span className="w-36 h-[3px] bg-white group-hover:bg-blue-400 transition-colors" />
+            </a>
+            <a
+              href="#contact"
+              className="flex flex-col items-center gap-2 group"
+            >
+              <span className="text-center text-white text-lg md:text-xl font-semibold uppercase leading-7 tracking-widest">
+                Contact
+              </span>
+              <span className="w-32 h-[3px] bg-white group-hover:bg-blue-400 transition-colors" />
+            </a>
+          </div>
         </div>
-        <div className="text-white text-3xl md:text-5xl lg:text-7xl font-normal font-['League Spartan']">
-          Elijah-Christian
+
+        <div className="flex-shrink-0">
+          <img
+            src={hero}
+            alt="Elijah-Christian Wiegand"
+            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[464px] lg:h-[464px] rounded-full object-cover"
+          />
         </div>
-        <div className="text-white text-xl md:text-3xl lg:text-5xl font-normal font-['League Spartan']">
-          Independent Software Contractor — enterprise roots, modern web focus
-        </div>
-      </div>
-      <div className="order-1 md:order-2 mt-8 md:mt-0 lg:ml-16">
-        <Avatar
-          className="mx-auto justify-center place-self-end"
-          alt="Elijah-Christian Wiegand"
-          src={propic}
-          sx={{ width: 400, height: 400 }}
-        />
       </div>
     </section>
 
-    {/* About Section */}
-    <MainSection title="About Me" altBackground>
-      <div
-        id="about-section"
-        className="scroll-mt-16 h-auto px-10 py-6 bg-[#292f36] rounded-[40px] flex-col justify-start items-start gap-4"
-      >
-        {/* add like styled spans of name in a cool way */}
-        <div className="flex-col mt-2 font-league-spartan text-xl text-white text-pretty leading-7 px-5 border-[#E0607E] shadow-lg h-auto ">
-          <p className=" hover:focus text-lg ">
-            I’m Elijah-Christian Wiegand, a Full-Stack Developer from New York.
-            By day I configure and extend Guidewire for complex policy workflows
-            in enterprise insurance. By night I build clean, scalable apps with
-            .NET, Next.js, and friends.
-            <br />
-            My sweet spot is bridging <strong>legacy enterprise systems <br />
-            </strong>
-            with <strong>modern engineering practices</strong>—untangling brittle
-            logic, improving reliability, and shipping user-friendly features.
-            <br />
-            I believe “haste makes waste,” and that less can be more. This
-            portfolio is a living document—check back for what I’m shipping next.
-            I’m available for contract engagements through
-            <strong> <br /> Parsec Logic Dev Solutions</strong>.
+    {/* About */}
+    <section
+      id="about"
+      className="scroll-mt-24 w-full px-6 md:px-[240px] py-16 md:py-20"
+    >
+      <div className="mx-auto max-w-container flex flex-col items-center gap-6">
+        <h2 className="text-gray-900 text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
+          About Me
+        </h2>
+        <div className="w-8 h-px bg-gray-900" />
+        <div className="flex flex-col items-start gap-4 w-full">
+          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
+            I&rsquo;m Elijah-Christian Wiegand, a Full-Stack Developer from New
+            York, now living in Chicago.
           </p>
-          <p className=" hover:focus text-lg">
-            Here are some of the technologies I work with:
+          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
+            By day, I configure and extend Guidewire for complex policy
+            workflows in enterprise insurance. By night, I build clean,
+            scalable apps with .NET, Next.js, with friends.
+          </p>
+          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
+            My sweet spot is bridging legacy enterprise systems with modern
+            engineering practices — untangling brittle logic, improving
+            reliability, and shipping user-friendly features.
+          </p>
+          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
+            I believe &ldquo;haste makes waste,&rdquo; and that less can be
+            more. This portfolio is a living document — check back for what
+            I&rsquo;m shipping next. I&rsquo;m available for contract
+            engagements through Parsec Logic Development Solutions.
           </p>
         </div>
-        <Technologies />
       </div>
-    </MainSection>
+    </section>
 
-    <MainSection title="Projects" altBackground={true}>
-      <div
-        id="project-section"
-        className="scroll-mt-16 flex flex-wrap justify-center gap-4 w-full bg-[#161616]"
-      >
-        <ProjectCard
-          title="RecipeFinder"
-          description="Turn leftover ingredients into dinner—save money, reduce waste."
-          image={recipeFinder}
-          link="https://recipedia-six.vercel.app/"
-          inProgress
-        />
-        <ProjectCard
-          title="Group Chat Name Generator"
-          description="Generate fun, memorable names—plus a playful Lottie animation."
-          image={groupChatGen}
-          link="https://660f580d21f957209c188d87--groupchatnamegenerator.netlify.app/"
-          inProgress
-        />
-        <ProjectCard
-          title="Refreshed News"
-          description="A clean, fast news experience with a refreshed, modern feel."
-          image={refreshedNews}
-          link="https://vite-refreshed-news.vercel.app/"
-          inProgress
-        />
+    <Technologies />
+
+    {/* Projects */}
+    <section
+      id="projects"
+      className="scroll-mt-24 w-full px-6 md:px-28 py-16 md:py-20"
+    >
+      <div className="mx-auto max-w-container flex flex-col items-center gap-10 md:gap-12">
+        <div className="flex flex-col items-center gap-6">
+          <h2 className="text-gray-900 text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
+            Projects
+          </h2>
+          <div className="w-8 h-px bg-gray-900" />
+        </div>
+        <div className="flex flex-col gap-10 md:gap-12 w-full">
+          {projects.map((project, i) => (
+            <React.Fragment key={project.title}>
+              <ProjectCard {...project} reverse={i % 2 === 1} />
+              {i < projects.length - 1 && (
+                <div className="w-full h-px bg-stone-300" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
-    </MainSection>
+    </section>
 
-    <MainSection title="Services">
-      <div className="w-full max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 pb-4">
-        {[
-          { label: "Custom Web Development", detail: "Full-stack apps — React, Node.js, .NET, Java" },
-          { label: "System Integration", detail: "APIs, legacy bridges, Guidewire / enterprise platforms" },
-          { label: "Shopify & Platform Work", detail: "Custom storefronts, theme dev, headless builds" },
-          { label: "Technical Consulting", detail: "Architecture reviews, tech strategy, small business web" },
-        ].map(({ label, detail }) => (
-          <div key={label} className="bg-[#292f36] rounded-2xl p-6 text-left shadow-md">
-            <div className="text-[#12f7d6] font-mono text-sm font-semibold mb-1">{label}</div>
-            <div className="text-white text-sm opacity-75">{detail}</div>
-          </div>
-        ))}
+    {/* Services */}
+    <section className="w-full px-6 md:px-[120px] py-12 md:py-20">
+      <div className="mx-auto max-w-container bg-gray-900 rounded-[40px] md:rounded-[80px] px-6 sm:px-10 md:px-16 py-12 md:py-20">
+        <div className="flex flex-col items-center gap-6">
+          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
+            Services
+          </h2>
+          <div className="w-8 h-px bg-white" />
+        </div>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          {services.map(({ label, detail, Icon }) => (
+            <div
+              key={label}
+              className="bg-white/10 rounded-3xl p-8 md:p-9 flex flex-col items-start gap-6 min-h-[18rem]"
+            >
+              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                <Icon className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-white text-2xl md:text-3xl font-semibold capitalize leading-9">
+                {label}
+              </h3>
+              <div className="w-8 h-px bg-white" />
+              <p className="text-white text-base md:text-lg font-normal leading-7">
+                {detail}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </MainSection>
+    </section>
 
-    <MainSection title=''>
-      <ContactSection />
-      <Footer />
-    </MainSection>
+    <ContactSection />
+    <Footer />
   </div>
 );
+
 export default Home;

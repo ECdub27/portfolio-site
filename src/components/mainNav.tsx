@@ -1,49 +1,68 @@
-import React from "react";
-import {
-  FaAddressCard,
-  FaHome,
-  FaScrewdriver,
-} from "react-icons/fa";
-import { FaAddressBook } from "react-icons/fa6";
+import React, { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { HiUser, HiBriefcase, HiMail } from 'react-icons/hi';
+
+const links = [
+  { href: '#about', label: 'About', Icon: HiUser },
+  { href: '#projects', label: 'Projects', Icon: HiBriefcase },
+  { href: '#contact', label: 'Contact', Icon: HiMail },
+];
 
 const MainNav: React.FC = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-[#1a1a1a] bg-[#267FF3] sm:block">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-6 py-3">
-        <a href="#home" className="flex flex-col leading-tight">
-          <span className="text-[#12f7d6] text-[10px] font-mono uppercase tracking-widest">Parsec Logic Dev Solutions</span>
-          <span className="text-white text-lg font-semibold font-inter">EC Wiegand</span>
+    <nav className="sticky top-0 z-50 w-full bg-gray-900">
+      <div className="mx-auto flex max-w-container items-center justify-between px-6 py-6 md:px-[120px] md:py-8">
+        <a
+          href="#home"
+          className="text-white text-sm md:text-xl font-bold uppercase tracking-widest"
+        >
+          Parsec Development Solutions
         </a>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="mt-4 flex flex-col rounded-lg border border-red-500 bg-[#1AB7FF]-50 p-4 font-medium md:mt:0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse">
-            <li className="bg-[#267FF3]">
-              <a href="#home" className="text-white flex items-center">
-                <FaHome className="text-black mr-2" />
-                Home
+
+        <button
+          type="button"
+          className="text-white md:hidden"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
+
+        <ul className="hidden md:flex items-center gap-16 lg:gap-24">
+          {links.map(({ href, label, Icon }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className="flex items-center gap-2 text-white text-lg font-medium capitalize hover:opacity-80 transition-opacity"
+              >
+                <Icon className="w-6 h-6" />
+                {label}
               </a>
             </li>
-            <li className="bg-[#267FF3]">
-              <a className="text-white flex items-center" href="#about-section">
-                <FaAddressCard className="text-black mr-2" />
-                About
-              </a>
-            </li>
-            <li className="bg-[#267FF3]">
-              <a className="text-white flex items-center" href="#project-section">
-                <FaScrewdriver className="text-black mr-2" />
-                Projects
-              </a>
-            </li>
-            <li className="bg-[#267FF3]">
-              <a className="text-white flex items-center" href="#contact-me">
-                <FaAddressBook className="text-black mr-2" />
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
       </div>
+
+      {open && (
+        <ul className="md:hidden flex flex-col gap-4 px-6 pb-6 bg-gray-900">
+          {links.map(({ href, label, Icon }) => (
+            <li key={href}>
+              <a
+                href={href}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-3 text-white text-lg font-medium capitalize"
+              >
+                <Icon className="w-6 h-6" />
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 };
+
 export default MainNav;
