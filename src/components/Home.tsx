@@ -11,6 +11,7 @@ import ProjectCard, { Project } from './projectCard';
 import ContactSection from './contact';
 import Footer from './footer';
 import hero from '/imgs/hero.png';
+import propic from '/imgs/propic.png';
 import recipeFinder from '/imgs/recipeFinder.jpeg';
 import groupChatGen from '/imgs/GroupChatNameGen.png';
 import refreshedNews from '/imgs/refreshedNews.jpeg';
@@ -70,7 +71,11 @@ const Home: React.FC = () => (
     <MainNav />
 
     {/* Hero */}
-    <section className="relative w-full bg-zinc-800 rounded-b-[60px] md:rounded-b-[100px] overflow-hidden">
+    <section
+      className="relative w-full bg-zinc-800 rounded-b-[60px] md:rounded-b-[100px] overflow-hidden"
+      style={{ backgroundImage: `url(${hero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+      <div className="absolute inset-0 bg-zinc-800/70" />
       <div className="relative z-10 mx-auto max-w-container px-6 md:px-[120px] py-16 md:py-24 flex flex-col-reverse md:flex-row items-center gap-10 md:gap-12">
         <div className="flex flex-col items-start gap-6 md:gap-8 w-full md:max-w-[621px]">
           <div className="flex flex-col">
@@ -111,7 +116,7 @@ const Home: React.FC = () => (
 
         <div className="flex-shrink-0">
           <img
-            src={hero}
+            src={propic}
             alt="Elijah-Christian Wiegand"
             className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[464px] lg:h-[464px] rounded-full object-cover"
           />
