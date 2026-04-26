@@ -20,7 +20,7 @@ const projects: Project[] = [
   {
     title: 'DishDex',
     description:
-      'At a loss for what to make for dinner? Use RecipeFinder to input a list of your leftover ingredients and see what you can make. Save money, reduce waste, and try something new!',
+      'At a loss for what to make for dinner? Use DishDex to input a list of your leftover ingredients and see what you can make. Save money, reduce waste, and try something new!',
     image: recipeFinder,
     link: 'https://recipedia-six.vercel.app/',
     technologies: 'React, Vite, Tailwind, Spoonacular API',
