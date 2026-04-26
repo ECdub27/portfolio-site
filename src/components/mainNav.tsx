@@ -16,9 +16,14 @@ const MainNav: React.FC = () => {
       <div className="mx-auto flex max-w-container items-center justify-between px-6 py-6 md:px-[120px] md:py-8">
         <a
           href="#home"
-          className="text-white text-sm md:text-xl font-bold uppercase tracking-widest"
+          className="flex items-center gap-3 text-white text-sm md:text-xl font-bold uppercase tracking-widest"
         >
-          Parsec Development Solutions
+          <img
+            src="/imgs/logo2.svg"
+            alt="Parsec Logic Dev Solutions"
+            className="h-10 w-10 md:h-12 md:w-12 rounded-md"
+          />
+          <span className="hidden sm:inline">Parsec Logic Dev Solutions</span>
         </a>
 
         <button

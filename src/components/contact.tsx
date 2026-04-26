@@ -81,7 +81,7 @@ const ContactSection: React.FC = () => {
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="flex items-center bg-[#2563EB] justify-center gap-3 w-full sm:w-72 h-16 bg-stone-300 hover:bg-white rounded-[20px] text-white text-base md:text-lg font-medium transition-colors"
+              className="flex items-center  justify-center gap-3 w-full sm:w-72 h-16 bg-stone-300 hover:bg-[#2563EB] rounded-[20px] text-white text-base md:text-lg font-medium transition-colors"
             >
               <Icon className="w-5 h-5" />
               {label}

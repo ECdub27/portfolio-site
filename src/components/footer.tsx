@@ -4,6 +4,11 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 const Footer: React.FC = () => (
   <footer className="w-full bg-gray-900 text-white">
     <div className="mx-auto max-w-container flex flex-col items-center justify-center gap-4 px-6 py-12 md:py-16">
+      <img
+        src="/imgs/logo2.svg"
+        alt="Parsec Logic Dev Solutions"
+        className="h-16 w-16 md:h-20 md:w-20 rounded-lg mb-2"
+      />
       <div className="flex gap-6">
         <a
           href="https://www.linkedin.com/in/elijah-christian-wiegand-2b59a898/"
