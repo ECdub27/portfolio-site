@@ -74,14 +74,14 @@ const ContactSection: React.FC = () => {
           Logic Dev Solutions — let&apos;s talk scope and timeline.
         </p>
 
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 w-full">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 w-full ">
           {buttons.map(({ label, href, Icon, external }) => (
             <a
               key={label}
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="flex items-center justify-center gap-3 w-full sm:w-72 h-16 bg-stone-300 hover:bg-white rounded-[20px] text-black text-base md:text-lg font-medium transition-colors"
+              className="flex items-center bg-[#2563EB] justify-center gap-3 w-full sm:w-72 h-16 bg-stone-300 hover:bg-white rounded-[20px] text-black text-base md:text-lg font-medium transition-colors"
             >
               <Icon className="w-5 h-5" />
               {label}
