@@ -23,5 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 src/api/api.js
 src/components/contactForm.js
-src/components/contactForm.js
-src/components/contactForm.js
+
+# resume / personal docs — keep PII out of the repo
+src/rescv/elijah-christian-wiegand-fullstackSaaS.pdf
+src/rescv/*.docx
+public/imgs/*Resume*.pdf
+public/imgs/*Software_Engineer*.pdf
