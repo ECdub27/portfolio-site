@@ -18,7 +18,7 @@ import refreshedNews from '/imgs/refreshedNews.jpeg';
 
 const projects: Project[] = [
   {
-    title: 'RecipeFinder',
+    title: 'DishDex',
     description:
       'At a loss for what to make for dinner? Use RecipeFinder to input a list of your leftover ingredients and see what you can make. Save money, reduce waste, and try something new!',
     image: recipeFinder,
