@@ -15,6 +15,7 @@ import propic from '/imgs/propic.png';
 import recipeFinder from '/imgs/recipeFinder.jpeg';
 import groupChatGen from '/imgs/GroupChatNameGen.png';
 import refreshedNews from '/imgs/refreshedNews.jpeg';
+import feelingsLog from '/imgs/myfeelingsLog.png';
 
 const projects: Project[] = [
   {
@@ -40,6 +41,13 @@ const projects: Project[] = [
     image: refreshedNews,
     link: 'https://vite-refreshed-news.vercel.app/',
     technologies: 'React, Vite, News API, Tailwind',
+  },
+  {
+    title: 'Feelings Log Journal',
+    description: 'A simple, calming space to log your feelings and reflect on your day. Built with Next.js and AsyncStorage for a smooth mobile experience.',
+    image: feelingsLog,
+    link: 'https://myfeelingslog.netlify.app/',
+    technologies: 'Next.js, Tailwind, AsyncStorage',
   },
 ];
 
