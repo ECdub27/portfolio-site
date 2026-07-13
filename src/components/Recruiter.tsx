@@ -8,16 +8,27 @@ import {
   FaDownload,
 } from 'react-icons/fa';
 
-const resumeUrl = '/imgs/ec-resume-saas-v2.docx';
+const resumes = {
+  fullStack: '/imgs/resumes/ec-resume-saas-v2.pdf',
+  enterprise: '/imgs/resumes/elijah-christian-wiegand-enterprise.docx',
+};
 
 const actions = [
   {
-    label: 'Download Resume',
-    href: resumeUrl,
+    label: 'Full-Stack / SaaS Résumé',
+    href: resumes.fullStack,
     Icon: FaDownload,
     external: false,
     primary: true,
-    download: 'EC-Wiegand-Resume.docx',
+    download: 'EC-Wiegand-FullStack-Resume.pdf',
+  },
+  {
+    label: 'Enterprise / Business Systems Résumé',
+    href: resumes.enterprise,
+    Icon: FaDownload,
+    external: false,
+    primary: true,
+    download: 'EC-Wiegand-Enterprise-Resume.docx',
   },
   {
     label: 'Email',
@@ -51,7 +62,7 @@ const Recruiter: React.FC = () => (
       </Link>
 
       <img
-        src="/imgs/logo2.svg"
+        src="/imgs/logos/logo2.svg"
         alt="Parsec Logic Dev Solutions"
         className="h-24 w-24 md:h-28 md:w-28 rounded-xl"
       />
@@ -69,6 +80,14 @@ const Recruiter: React.FC = () => (
         Enterprise roots, modern web focus. .NET, React/Next.js, Node, and
         Guidewire integration experience. Available for contract or full-time
         engagements through Parsec Logic Dev Solutions.
+      </p>
+
+      <p className="max-w-md text-center text-white/60 text-sm md:text-base leading-6">
+        Two résumés — grab the one that fits the role. The{' '}
+        <span className="text-white/90 font-medium">Full-Stack / SaaS</span>{' '}
+        résumé for product &amp; web engineering roles, the{' '}
+        <span className="text-white/90 font-medium">Enterprise</span> résumé for
+        business-systems, Guidewire, and integration roles.
       </p>
 
       <div className="flex flex-col gap-3 md:gap-4 w-full max-w-md">

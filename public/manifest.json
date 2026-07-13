@@ -3,12 +3,12 @@
   "name": "Parsec Logic Dev Solutions — EC Wiegand",
   "icons": [
     {
-      "src": "imgs/logo2.svg",
+      "src": "imgs/logos/logo2.svg",
       "type": "image/svg+xml",
       "sizes": "any"
     },
     {
-      "src": "imgs/logo2.png",
+      "src": "imgs/logos/logo2.png",
       "type": "image/png",
       "sizes": "512x512"
     }

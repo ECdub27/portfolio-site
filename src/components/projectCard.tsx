@@ -6,6 +6,10 @@ export interface Project {
   image: string;
   link: string;
   technologies: string;
+  /** Optional badge shown above the title, e.g. "Contract · Planet Euphoria". */
+  role?: string;
+  /** Optional label for the CTA link. Defaults to "See Project". */
+  linkLabel?: string;
 }
 
 interface ProjectCardProps extends Project {
@@ -18,6 +22,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   link,
   technologies,
+  role,
+  linkLabel = 'See Project',
   reverse = false,
 }) => (
   <article
@@ -31,9 +37,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       className="w-full max-w-sm md:w-96 md:h-96 aspect-square object-cover rounded-[40px] flex-shrink-0"
     />
     <div className="flex-1 flex flex-col items-start gap-6 md:gap-8 w-full md:max-w-[776px]">
-      <h3 className="text-gray-900 text-3xl md:text-4xl font-semibold capitalize leading-tight">
-        {title}
-      </h3>
+      <div className="flex flex-col items-start gap-3">
+        {role && (
+          <span className="inline-flex items-center rounded-full bg-blue-600/10 text-blue-700 text-xs md:text-sm font-semibold uppercase tracking-widest px-3 py-1">
+            {role}
+          </span>
+        )}
+        <h3 className="text-gray-900 text-3xl md:text-4xl font-semibold capitalize leading-tight">
+          {title}
+        </h3>
+      </div>
       <div className="w-8 h-px bg-gray-900" />
       <p className="text-zinc-600 text-base md:text-lg font-normal leading-7">
         {description}
@@ -53,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         className="flex flex-col items-center gap-2 w-44 group"
       >
         <span className="text-center text-gray-900 text-lg md:text-xl font-semibold uppercase leading-7 tracking-widest group-hover:text-blue-600 transition-colors">
-          See Project
+          {linkLabel}
         </span>
         <span className="w-44 h-[3px] bg-blue-600" />
       </a>

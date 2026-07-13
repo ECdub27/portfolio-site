@@ -5,7 +5,7 @@ const Footer: React.FC = () => (
   <footer className="w-full bg-gray-900 text-white">
     <div className="mx-auto max-w-container flex flex-col items-center justify-center gap-4 px-6 py-12 md:py-16">
       <img
-        src="/imgs/logo2.svg"
+        src="/imgs/logos/logo2.svg"
         alt="Parsec Logic Dev Solutions"
         className="h-16 w-16 md:h-20 md:w-20 rounded-lg mb-2"
       />

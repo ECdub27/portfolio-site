@@ -19,7 +19,7 @@ const MainNav: React.FC = () => {
           className="flex items-center gap-3 text-white text-sm md:text-xl font-bold uppercase tracking-widest"
         >
           <img
-            src="/imgs/logo2.svg"
+            src="/imgs/logos/logo2.svg"
             alt="Parsec Logic Dev Solutions"
             className="h-10 w-10 md:h-12 md:w-12 rounded-md"
           />

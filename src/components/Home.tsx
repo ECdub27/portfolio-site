@@ -12,10 +12,25 @@ import ContactSection from './contact';
 import Footer from './footer';
 import hero from '/imgs/hero.png';
 import propic from '/imgs/propic.png';
-import recipeFinder from '/imgs/recipeFinder.jpeg';
-import groupChatGen from '/imgs/GroupChatNameGen.png';
-import refreshedNews from '/imgs/refreshedNews.jpeg';
-import feelingsLog from '/imgs/myfeelingsLog.png';
+import recipeFinder from '/imgs/projects/recipeFinder.jpeg';
+import groupChatGen from '/imgs/projects/GroupChatNameGen.png';
+import refreshedNews from '/imgs/projects/refreshedNews.jpeg';
+import feelingsLog from '/imgs/projects/myfeelingsLog.png';
+import shirtstakes from '/imgs/projects/shirtstakes-port.png';
+
+const contractProjects: Project[] = [
+  {
+    title: 'ShirtStakes — Planet Euphoria',
+    role: 'Contract · Planet Euphoria',
+    description:
+      'A 3D "mystery pack" pack-opening experience built into Planet Euphoria’s live Shopify store. Customers pick a themed pack, rip it open in an interactive 3D animation, and a random shirt is revealed at checkout. I built the React/Three.js front-end (shipped as a drop-in bundle for their custom theme), a Python app-server handling weighted pull-rate logic and secure Shopify cart/checkout gating, and a companion Expo mobile app.',
+    image: shirtstakes,
+    link: 'https://planeteuphoria.com',
+    linkLabel: 'Visit Store',
+    technologies:
+      'React 19, React Three Fiber / Three.js, Vite, Tailwind, Shopify (custom theme + Admin GraphQL), Python, Expo / React Native',
+  },
+];
 
 const projects: Project[] = [
   {
@@ -181,15 +196,41 @@ const Home: React.FC = () => (
           </h2>
           <div className="w-8 h-px bg-gray-900" />
         </div>
-        <div className="flex flex-col gap-10 md:gap-12 w-full">
-          {projects.map((project, i) => (
-            <React.Fragment key={project.title}>
-              <ProjectCard {...project} reverse={i % 2 === 1} />
-              {i < projects.length - 1 && (
-                <div className="w-full h-px bg-stone-300" />
-              )}
-            </React.Fragment>
-          ))}
+
+        {/* Contract / client work */}
+        <div className="flex flex-col items-center gap-8 md:gap-10 w-full">
+          <h3 className="text-blue-600 text-lg md:text-xl font-semibold uppercase tracking-widest text-center">
+            Contract Work
+          </h3>
+          <div className="flex flex-col gap-10 md:gap-12 w-full">
+            {contractProjects.map((project, i) => (
+              <React.Fragment key={project.title}>
+                <ProjectCard {...project} reverse={i % 2 === 1} />
+                {i < contractProjects.length - 1 && (
+                  <div className="w-full h-px bg-stone-300" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+
+        <div className="w-full h-px bg-stone-300" />
+
+        {/* Personal projects */}
+        <div className="flex flex-col items-center gap-8 md:gap-10 w-full">
+          <h3 className="text-blue-600 text-lg md:text-xl font-semibold uppercase tracking-widest text-center">
+            Personal Projects
+          </h3>
+          <div className="flex flex-col gap-10 md:gap-12 w-full">
+            {projects.map((project, i) => (
+              <React.Fragment key={project.title}>
+                <ProjectCard {...project} reverse={i % 2 === 1} />
+                {i < projects.length - 1 && (
+                  <div className="w-full h-px bg-stone-300" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </section>
