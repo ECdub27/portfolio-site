@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import Section from '../layout/Section';
+import Container from '../layout/Container';
+import SectionHeader from '../layout/SectionHeader';
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
@@ -60,28 +63,26 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section
+    <Section
       id="contact"
-      className="scroll-mt-24 relative w-full bg-zinc-800 rounded-t-[60px] md:rounded-t-[100px] overflow-hidden"
+      variant="dark"
+      className="relative rounded-t-[60px] md:rounded-t-[100px] overflow-hidden py-16 md:py-20"
     >
-      <div className="relative z-10 mx-auto max-w-container px-6 md:px-[120px] py-16 md:py-20 flex flex-col items-center gap-6">
-        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
-          Work with me
-        </h2>
-        <div className="w-8 h-px bg-white" />
+      <Container className="flex flex-col items-center gap-6">
+        <SectionHeader title="Work with me" light />
         <p className="max-w-2xl text-center text-white text-base md:text-lg font-normal leading-7">
           Have a project in mind? I take on contract engagements through Parsec
           Logic Dev Solutions — let&apos;s talk scope and timeline.
         </p>
 
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 w-full ">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 w-full">
           {buttons.map(({ label, href, Icon, external }) => (
             <a
               key={label}
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="flex items-center  justify-center gap-3 w-full sm:w-72 h-16 bg-stone-300 hover:bg-[#2563EB] rounded-[20px] text-white text-base md:text-lg font-medium transition-colors"
+              className="flex items-center justify-center gap-3 w-full sm:w-72 h-16 bg-stone-300 hover:bg-[#2563EB] rounded-[20px] text-white text-base md:text-lg font-medium transition-colors"
             >
               <Icon className="w-5 h-5" />
               {label}
@@ -152,8 +153,8 @@ const ContactSection: React.FC = () => {
             )}
           </div>
         </form>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

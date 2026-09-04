@@ -5,13 +5,13 @@ import {
   FaShoppingBag,
   FaChalkboardTeacher,
 } from 'react-icons/fa';
-import MainNav from './mainNav';
+import { Project } from './projectCard';
 import Technologies from './technologies';
-import ProjectCard, { Project } from './projectCard';
 import ContactSection from './contact';
-import Footer from './footer';
-import hero from '/imgs/hero.png';
-import propic from '/imgs/propic.png';
+import HeroSection from '../sections/HeroSection';
+import AboutSection from '../sections/AboutSection';
+import ProjectsSection from '../sections/ProjectsSection';
+import ServicesSection, { Service } from '../sections/ServicesSection';
 import recipeFinder from '/imgs/projects/recipeFinder.jpeg';
 import groupChatGen from '/imgs/projects/GroupChatNameGen.png';
 import refreshedNews from '/imgs/projects/refreshedNews.jpeg';
@@ -66,7 +66,7 @@ const projects: Project[] = [
   },
 ];
 
-const services = [
+const services: Service[] = [
   {
     label: 'Custom Web Development',
     detail: 'Full-stack apps — React, Node.js, .NET, Java',
@@ -90,184 +90,13 @@ const services = [
 ];
 
 const Home: React.FC = () => (
-  <div id="home" className="bg-white">
-    <MainNav />
-
-    {/* Hero */}
-    <section
-      className="relative w-full bg-zinc-800 rounded-b-[60px] md:rounded-b-[100px] overflow-hidden"
-      style={{ backgroundImage: `url(${hero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-    >
-      <div className="absolute inset-0 bg-zinc-800/70" />
-      <div className="relative z-10 mx-auto max-w-container px-6 md:px-[120px] py-16 md:py-24 flex flex-col-reverse md:flex-row items-center gap-10 md:gap-12">
-        <div className="flex flex-col items-start gap-6 md:gap-8 w-full md:max-w-[621px]">
-          <div className="flex flex-col">
-            <span className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold capitalize leading-none">
-              Hi, I&rsquo;m
-            </span>
-            <span className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold capitalize leading-tight mt-1">
-              Elijah-Christian.
-            </span>
-          </div>
-          <p className="text-white text-base md:text-xl font-semibold uppercase leading-7 tracking-widest">
-            Independent Software Contractor —
-            <br className="hidden sm:block" />
-            enterprise roots, modern web focus
-          </p>
-          <div className="w-8 h-px bg-white" />
-          <div className="flex flex-wrap gap-8 md:gap-12">
-            <a
-              href="#projects"
-              className="flex flex-col items-center gap-2 group"
-            >
-              <span className="text-center text-white text-lg md:text-xl font-semibold uppercase leading-7 tracking-widest">
-                Projects
-              </span>
-              <span className="w-36 h-[3px] bg-white group-hover:bg-blue-400 transition-colors" />
-            </a>
-            <a
-              href="#contact"
-              className="flex flex-col items-center gap-2 group"
-            >
-              <span className="text-center text-white text-lg md:text-xl font-semibold uppercase leading-7 tracking-widest">
-                Contact
-              </span>
-              <span className="w-32 h-[3px] bg-white group-hover:bg-blue-400 transition-colors" />
-            </a>
-          </div>
-        </div>
-
-        <div className="flex-shrink-0">
-          <img
-            src={propic}
-            alt="Elijah-Christian Wiegand"
-            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[464px] lg:h-[464px] rounded-full object-cover"
-          />
-        </div>
-      </div>
-    </section>
-
-    {/* About */}
-    <section
-      id="about"
-      className="scroll-mt-24 w-full px-6 md:px-[240px] py-16 md:py-20"
-    >
-      <div className="mx-auto max-w-container flex flex-col items-center gap-6">
-        <h2 className="text-gray-900 text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
-          About Me
-        </h2>
-        <div className="w-8 h-px bg-gray-900" />
-        <div className="flex flex-col items-start gap-4 w-full">
-          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
-            I&rsquo;m Elijah-Christian Wiegand, a Full-Stack Developer from New
-            York, now living in Chicago.
-          </p>
-          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
-            By day, I configure and extend Guidewire for complex policy
-            workflows in enterprise insurance. By night, I build clean,
-            scalable apps with .NET, Next.js, with friends.
-          </p>
-          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
-            My sweet spot is bridging legacy enterprise systems with modern
-            engineering practices — untangling brittle logic, improving
-            reliability, and shipping user-friendly features.
-          </p>
-          <p className="w-full text-center text-zinc-600 text-base md:text-lg font-normal leading-7">
-            I believe &ldquo;haste makes waste,&rdquo; and that less can be
-            more. This portfolio is a living document — check back for what
-            I&rsquo;m shipping next. I&rsquo;m available for contract
-            engagements through Parsec Logic Development Solutions.
-          </p>
-        </div>
-      </div>
-    </section>
-
+  <div className="bg-white">
+    <HeroSection />
+    <AboutSection />
     <Technologies />
-
-    {/* Projects */}
-    <section
-      id="projects"
-      className="scroll-mt-24 w-full px-6 md:px-28 py-16 md:py-20"
-    >
-      <div className="mx-auto max-w-container flex flex-col items-center gap-10 md:gap-12">
-        <div className="flex flex-col items-center gap-6">
-          <h2 className="text-gray-900 text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
-            Projects
-          </h2>
-          <div className="w-8 h-px bg-gray-900" />
-        </div>
-
-        {/* Contract / client work */}
-        <div className="flex flex-col items-center gap-8 md:gap-10 w-full">
-          <h3 className="text-blue-600 text-lg md:text-xl font-semibold uppercase tracking-widest text-center">
-            Contract Work
-          </h3>
-          <div className="flex flex-col gap-10 md:gap-12 w-full">
-            {contractProjects.map((project, i) => (
-              <React.Fragment key={project.title}>
-                <ProjectCard {...project} reverse={i % 2 === 1} />
-                {i < contractProjects.length - 1 && (
-                  <div className="w-full h-px bg-stone-300" />
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-
-        <div className="w-full h-px bg-stone-300" />
-
-        {/* Personal projects */}
-        <div className="flex flex-col items-center gap-8 md:gap-10 w-full">
-          <h3 className="text-blue-600 text-lg md:text-xl font-semibold uppercase tracking-widest text-center">
-            Personal Projects
-          </h3>
-          <div className="flex flex-col gap-10 md:gap-12 w-full">
-            {projects.map((project, i) => (
-              <React.Fragment key={project.title}>
-                <ProjectCard {...project} reverse={i % 2 === 1} />
-                {i < projects.length - 1 && (
-                  <div className="w-full h-px bg-stone-300" />
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Services */}
-    <section className="w-full px-6 md:px-[120px] py-12 md:py-20">
-      <div className="mx-auto max-w-container bg-gray-900 rounded-[40px] md:rounded-[80px] px-6 sm:px-10 md:px-16 py-12 md:py-20">
-        <div className="flex flex-col items-center gap-6">
-          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
-            Services
-          </h2>
-          <div className="w-8 h-px bg-white" />
-        </div>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-          {services.map(({ label, detail, Icon }) => (
-            <div
-              key={label}
-              className="bg-white/10 rounded-3xl p-8 md:p-9 flex flex-col items-start gap-6 min-h-[18rem]"
-            >
-              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
-                <Icon className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-white text-2xl md:text-3xl font-semibold capitalize leading-9">
-                {label}
-              </h3>
-              <div className="w-8 h-px bg-white" />
-              <p className="text-white text-base md:text-lg font-normal leading-7">
-                {detail}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
+    <ProjectsSection contractProjects={contractProjects} projects={projects} />
+    <ServicesSection services={services} />
     <ContactSection />
-    <Footer />
   </div>
 );
 

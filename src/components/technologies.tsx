@@ -9,6 +9,9 @@ import {
   FaGitAlt,
 } from 'react-icons/fa';
 import { SiTypescript, SiDotnet, SiPostgresql } from 'react-icons/si';
+import Section from '../layout/Section';
+import Container from '../layout/Container';
+import SectionHeader from '../layout/SectionHeader';
 
 type Tech = { label: string; Icon: React.ComponentType<{ className?: string }> };
 
@@ -39,29 +42,26 @@ const techs: Tech[] = [
 ];
 
 const Technologies: React.FC = () => (
-  <section className="w-full px-6 md:px-[120px] py-12 md:py-20">
-    <div className="mx-auto max-w-container bg-gray-900 rounded-[40px] md:rounded-[80px] px-6 sm:px-10 md:px-16 py-12 md:py-20">
-      <div className="flex flex-col items-center gap-6">
-        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold capitalize leading-tight text-center">
-          Technologies &amp; Expertise
-        </h2>
-        <div className="w-8 h-px bg-white" />
+  <Section className="px-6 md:px-[120px] py-12 md:py-20">
+    <Container>
+      <div className="bg-gray-900 rounded-[40px] md:rounded-[80px] px-6 sm:px-10 md:px-16 py-12 md:py-20">
+        <SectionHeader title="Technologies & Expertise" light />
+        <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-6 gap-y-10 place-items-center">
+          {techs.map(({ label, Icon }) => (
+            <div
+              key={label}
+              className="flex flex-col items-center gap-4 w-20"
+            >
+              <Icon className="w-16 h-16 text-white" />
+              <span className="text-white text-sm sm:text-base md:text-lg font-medium capitalize text-center leading-tight">
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-6 gap-y-10 place-items-center">
-        {techs.map(({ label, Icon }) => (
-          <div
-            key={label}
-            className="flex flex-col items-center gap-4 w-20"
-          >
-            <Icon className="w-16 h-16 text-white" />
-            <span className="text-white text-sm sm:text-base md:text-lg font-medium capitalize text-center leading-tight">
-              {label}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+    </Container>
+  </Section>
 );
 
 export default Technologies;
